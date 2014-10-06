@@ -1,0 +1,19 @@
+{
+	"name": "aureooms-js-prime",
+	"version": "0.0.0",
+	"ignore": [
+		"js/index.js",
+		"js/src",
+		"test",
+		"pkg.json",
+		"package.json",
+		".groc.json",
+		".travis.yml",
+		".gitignore",
+		"README.md"
+	],
+	"license": "AGPL-3.0",
+	"description": "prime numbers code bricks for JavaScript",
+	"homepage": "http://aureooms.github.io/js-prime/",
+	"main": "js/dist/prime.js"
+}
