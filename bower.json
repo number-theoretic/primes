@@ -1,6 +1,6 @@
 {
 	"name": "aureooms-js-prime",
-	"version": "0.0.0",
+	"version": "0.0.1",
 	"ignore": [
 		"js/index.js",
 		"js/src",
