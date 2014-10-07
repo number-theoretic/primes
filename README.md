@@ -17,3 +17,4 @@ prime numbers code bricks for JavaScript
 reference:
 
  - http://cr.yp.to/primegen.html
+ - https://github.com/jbarham/primegen.go
