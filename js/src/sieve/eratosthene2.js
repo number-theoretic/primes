@@ -5,14 +5,6 @@
 
 var __eratosthene2__ = function (alloc, get, gothrough, sqrt) {
 
-	var itop = function (i) {
-		return i * 2 + 1;
-	};
-
-	var ptoi = function (p) {
-		return p / 2 | 0;
-	};
-
 	var first = 3;
 
 	var eratosthene2 = function (a, n, cb) {
@@ -29,24 +21,24 @@ var __eratosthene2__ = function (alloc, get, gothrough, sqrt) {
 			return;
 		}
 
-		size = ptoi(n);
+		size = ptoi2(n);
 
 		prime = alloc(size);
 		fill(prime, 0, size, true);
 
-		m = ptoi(sqrt(n));
+		m = ptoi2(sqrt(n));
 
-		for (i = ptoi(first); i < m; ++i) {
+		for (i = ptoi2(first); i < m; ++i) {
 			if (get(prime, i)) {
-				p = itop(i);
+				p = itop2(i);
 				cb(p);
-				gothrough(prime, ptoi(p * p), size, p);
+				gothrough(prime, ptoi2(p * p), size, p);
 			}
 		}
 
 		for (i = m; i < size; ++i) {
 			if (get(prime, i)) {
-				cb(itop(i));
+				cb(itop2(i));
 			}
 		}
 

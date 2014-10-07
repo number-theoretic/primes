@@ -5,14 +5,6 @@
 
 var __eratosthene__ = function (alloc, get, gothrough, sqrt) {
 
-	var itop = function (i) {
-		return i;
-	};
-
-	var ptoi = function (p) {
-		return p;
-	};
-
 	var first = 2;
 
 	var eratosthene = function (a, n, cb) {

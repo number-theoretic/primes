@@ -5,33 +5,6 @@
 
 var __eratosthene23__ = function (alloc, get, gothrough, sqrt) {
 
-
-	var itop0 = function (i) {
-		return 6 * ((i / 2 | 0) + 1) - 1;
-	};
-
-	var itop1 = function (i) {
-		return 6 * ((i / 2 | 0) + 1) + 1;
-	};
-
-	var itop = function (i) {
-		return (i % 2 === 0) ? itop0(i) : itop1(i);
-	};
-
-
-	var ptoi0 = function (p) {
-		return ((p + 1) / 3 | 0) - 2;
-	};
-
-
-	var ptoi1 = function (p) {
-		return ((p - 1) / 3 | 0) - 1;
-	};
-
-	var ptoi = function (p) {
-		return (p % 6 <= 4) ? ptoi1(p) : ptoi0(p)
-	};
-
 	var first = 5;
 
 	var eratosthene23 = function (a, n, cb) {
@@ -54,13 +27,13 @@ var __eratosthene23__ = function (alloc, get, gothrough, sqrt) {
 			return;
 		}
 
-		size = ptoi(n);
+		size = ptoi23(n);
 
 		prime = alloc(size);
 		fill(prime, 0, size, true);
 
-		m = ptoi(sqrt(n));
-		i = ptoi0(first);
+		m = ptoi23(sqrt(n));
+		i = ptoi230(first);
 
 		for (;;) {
 
@@ -70,11 +43,11 @@ var __eratosthene23__ = function (alloc, get, gothrough, sqrt) {
 
 			if (get(prime, i)) {
 
-				p = itop0(i);
+				p = itop230(i);
 
 				cb(p);
 
-				j = ptoi1(p * p);
+				j = ptoi231(p * p);
 
 				gothrough(prime, j, size, 2 * p);
 				gothrough(prime, j + p - 2 * i, size, 2 * p);
@@ -90,11 +63,11 @@ var __eratosthene23__ = function (alloc, get, gothrough, sqrt) {
 
 			if (get(prime, i)) {
 
-				p = itop0(i);
+				p = itop230(i);
 
 				cb(p);
 
-				j = ptoi1(p * p);
+				j = ptoi231(p * p);
 
 				gothrough(prime, j, size, 2 * p);
 				gothrough(prime, j + p + 2 * i, size, 2 * p);
@@ -114,7 +87,7 @@ var __eratosthene23__ = function (alloc, get, gothrough, sqrt) {
 			}
 
 			if (get(prime, i)) {
-				cb(itop(i));
+				cb(itop23(i));
 			}
 
 			++i;
@@ -125,7 +98,7 @@ var __eratosthene23__ = function (alloc, get, gothrough, sqrt) {
 			}
 
 			if (get(prime, i)) {
-				cb(itop(i));
+				cb(itop23(i));
 			}
 
 			++i;
