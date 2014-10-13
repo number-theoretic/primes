@@ -13,3 +13,8 @@ prime numbers code bricks for JavaScript
 [![Code Climate](https://codeclimate.com/github/aureooms/js-prime.png)](https://codeclimate.com/github/aureooms/js-prime)
 [![NPM downloads per month](http://img.shields.io/npm/dm/aureooms-js-prime.svg)](https://www.npmjs.org/package/aureooms-js-prime)
 [![GitHub issues](http://img.shields.io/github/issues/aureooms/js-prime.svg)](https://github.com/aureooms/js-prime/issues)
+
+reference:
+
+ - http://cr.yp.to/primegen.html
+ - https://github.com/jbarham/primegen.go
