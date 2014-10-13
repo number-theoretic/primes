@@ -2,6 +2,7 @@
 /**
  * Upper bound for computing the nth prime number.
  *
+ * see http://math.univ-lille1.fr/~ramare/TME-EMT/Articles/Art01.html
  *
  */
 
