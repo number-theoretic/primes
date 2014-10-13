@@ -49,4 +49,4 @@ var __eratosthene2__ = function (alloc, get, gothrough, sqrt) {
 
 };
 
-exports.eratosthene2 = eratosthene2;
+exports.__eratosthene2__ = __eratosthene2__;

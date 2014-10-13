@@ -43,4 +43,4 @@ var __eratosthene__ = function (alloc, get, gothrough, sqrt) {
 
 };
 
-exports.eratosthene = eratosthene;
+exports.__eratosthene__ = __eratosthene__;
