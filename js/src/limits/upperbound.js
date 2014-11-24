@@ -4,24 +4,26 @@
  *
  * see http://math.univ-lille1.fr/~ramare/TME-EMT/Articles/Art01.html
  *
+ * /!\ n = 1 will work only if loglog(0) returns 0
+ *
  */
 
-var __upperbound__ = function (log, loglog) {
+var __upperbound__ = function ( log , loglog ) {
 
-	var upperbound = function (n) {
-		if (n < 55) {
-			return n * (log(n) + loglog(n)) + 3;
+	var upperbound = function ( n ) {
+		if ( n < 55 ) {
+			return n * ( log( n ) + loglog( n ) ) + 3 ;
 		}
-		else if (n < 39018) {
-			return n * (log(n) + loglog(n) - 0.5);
+		else if ( n < 39018 ) {
+			return n * ( log( n ) + loglog( n ) - 0.5 ) ;
 		}
 		else{
-			return n * (log(n) + loglog(n) - 0.9484);
+			return n * ( log( n ) + loglog( n ) - 0.9484 ) ;
 		}
-	};
+	} ;
 
-	return upperbound;
+	return upperbound ;
 
-};
+} ;
 
-exports.__upperbound__ = __upperbound__;
+exports.__upperbound__ = __upperbound__ ;

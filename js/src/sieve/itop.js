@@ -1,6 +1,6 @@
 
-var itop = function (i) {
-	return i;
-};
+var itop = function ( i ) {
+	return i ;
+} ;
 
-exports.itop = itop;
+exports.itop = itop ;

@@ -3,44 +3,44 @@
  * Sieve of erathostene.
  */
 
-var __eratosthene__ = function (alloc, get, gothrough, sqrt) {
+var __eratosthene__ = function ( alloc , fill , get , gothrough , usqrt ) {
 
-	var first = 2;
+	var first = 2 ;
 
-	var eratosthene = function (a, n, cb) {
+	var eratosthene = function ( n , callback ) {
 
-		var size, prime, m, i, p;
+		var size , sieve , m , i , p ;
 
-		if (n <= 2) {
-			return;
+		if ( n <= 2 ) {
+			return null ;
 		}
 
-		size = ptoi(n);
+		size = ptoi( n ) ;
 
-		prime = alloc(size);
-		fill(prime, 0, size, true);
+		sieve = alloc( size ) ;
+		fill( sieve , 0 , size , true ) ;
 
-		m = ptoi(sqrt(n));
+		m = ptoi( usqrt( n ) ) ;
 
-		for (i = ptoi(first); i < m; ++i) {
-			if (get(prime, i)) {
-				p = itop(i);
-				cb(p);
-				gothrough(prime, ptoi(p * p), size, p);
+		for ( i = ptoi( first ) ; i < m ; ++i ) {
+			if ( get( sieve , i ) ) {
+				p = itop( i ) ;
+				callback( p ) ;
+				gothrough( sieve , ptoi( p * p ) , size , p ) ;
 			}
 		}
 
-		for (i = m; i < size; ++i) {
-			if (get(prime, i)) {
-				cb(itop(i));
+		for ( i = m ; i < size ; ++i ) {
+			if ( get( sieve , i ) ) {
+				callback( itop( i ) ) ;
 			}
 		}
 
-		return prime;
-	};
+		return sieve ;
+	} ;
 
-	return eratosthene;
+	return eratosthene ;
 
-};
+} ;
 
-exports.__eratosthene__ = __eratosthene__;
+exports.__eratosthene__ = __eratosthene__ ;

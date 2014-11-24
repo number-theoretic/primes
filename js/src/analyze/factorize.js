@@ -1,32 +1,38 @@
 
-var __factorize__ = function ( two, addone, iszero, gtone, div ) {
+var __factorize__ = function ( two, iaddone, iszero, gtone, divmod ) {
 
-	var factorize = function ( n, out ) {
+	var factorize = function ( n, factors ) {
 
-		divisor = two;
+		var divisor , qr , q , r ;
 
-		while ( gtone( n ) ) {
+		divisor = two ( ) ;
 
-			qr = div( n, divisor );
+		while ( gtone ( n ) ) {
 
-			q = qr[0];
-			r = qr[1];
+			// [ q , r ] = divmod ( n , divisor ) ; FOR ES6
+			qr = divmod ( n , divisor ) ;
 
-			if ( iszero( r ) ) {
+			q = qr[0] ;
+			r = qr[1] ;
 
-				out.push( d );
+			if ( iszero ( r ) ) {
 
-				n = q;
+				factors . push ( divisor ) ;
+
+				n = q ;
+
 			}
 
 			else {
-				divisor = addone( divisor );
+				divisor = iaddone ( divisor ) ;
 			}
 
 		}
 
-	};
+	} ;
 
-};
+	return factorize ;
+
+} ;
 
 exports.__factorize__ = __factorize__;

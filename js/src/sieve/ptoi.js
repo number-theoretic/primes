@@ -1,6 +1,6 @@
 
-var ptoi = function (p) {
-	return p;
-};
+var ptoi = function ( p ) {
+	return p ;
+} ;
 
-exports.ptoi = ptoi;
+exports.ptoi = ptoi ;

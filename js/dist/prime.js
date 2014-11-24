@@ -6,35 +6,41 @@
 /* js/src/analyze */
 /* js/src/analyze/factorize.js */
 
-var __factorize__ = function ( two, addone, iszero, gtone, div ) {
+var __factorize__ = function ( two, iaddone, iszero, gtone, divmod ) {
 
-	var factorize = function ( n, out ) {
+	var factorize = function ( n, factors ) {
 
-		divisor = two;
+		var divisor , qr , q , r ;
 
-		while ( gtone( n ) ) {
+		divisor = two ( ) ;
 
-			qr = div( n, divisor );
+		while ( gtone ( n ) ) {
 
-			q = qr[0];
-			r = qr[1];
+			// [ q , r ] = divmod ( n , divisor ) ; FOR ES6
+			qr = divmod ( n , divisor ) ;
 
-			if ( iszero( r ) ) {
+			q = qr[0] ;
+			r = qr[1] ;
 
-				out.push( d );
+			if ( iszero ( r ) ) {
 
-				n = q;
+				factors . push ( divisor ) ;
+
+				n = q ;
+
 			}
 
 			else {
-				divisor = addone( divisor );
+				divisor = iaddone ( divisor ) ;
 			}
 
 		}
 
-	};
+	} ;
 
-};
+	return factorize ;
+
+} ;
 
 exports.__factorize__ = __factorize__;
 
@@ -44,28 +50,31 @@ exports.__factorize__ = __factorize__;
 /**
  * Upper bound for computing the nth prime number.
  *
+ * see http://math.univ-lille1.fr/~ramare/TME-EMT/Articles/Art01.html
+ *
+ * /!\ n = 1 will work only if loglog(0) returns 0
  *
  */
 
-var __upperbound__ = function (log, loglog) {
+var __upperbound__ = function ( log , loglog ) {
 
-	var upperbound = function (n) {
-		if (n < 55) {
-			return n * (log(n) + loglog(n)) + 3;
+	var upperbound = function ( n ) {
+		if ( n < 55 ) {
+			return n * ( log( n ) + loglog( n ) ) + 3 ;
 		}
-		else if (n < 39018) {
-			return n * (log(n) + loglog(n) - 0.5);
+		else if ( n < 39018 ) {
+			return n * ( log( n ) + loglog( n ) - 0.5 ) ;
 		}
 		else{
-			return n * (log(n) + loglog(n) - 0.9484);
+			return n * ( log( n ) + loglog( n ) - 0.9484 ) ;
 		}
-	};
+	} ;
 
-	return upperbound;
+	return upperbound ;
 
-};
+} ;
 
-exports.__upperbound__ = __upperbound__;
+exports.__upperbound__ = __upperbound__ ;
 
 /* js/src/sieve */
 /* js/src/sieve/eratosthene.js */
@@ -74,47 +83,47 @@ exports.__upperbound__ = __upperbound__;
  * Sieve of erathostene.
  */
 
-var __eratosthene__ = function (alloc, get, gothrough, sqrt) {
+var __eratosthene__ = function ( alloc , fill , get , gothrough , usqrt ) {
 
-	var first = 2;
+	var first = 2 ;
 
-	var eratosthene = function (a, n, cb) {
+	var eratosthene = function ( n , callback ) {
 
-		var size, prime, m, i, p;
+		var size , sieve , m , i , p ;
 
-		if (n <= 2) {
-			return;
+		if ( n <= 2 ) {
+			return null ;
 		}
 
-		size = ptoi(n);
+		size = ptoi( n ) ;
 
-		prime = alloc(size);
-		fill(prime, 0, size, true);
+		sieve = alloc( size ) ;
+		fill( sieve , 0 , size , true ) ;
 
-		m = ptoi(sqrt(n));
+		m = ptoi( usqrt( n ) ) ;
 
-		for (i = ptoi(first); i < m; ++i) {
-			if (get(prime, i)) {
-				p = itop(i);
-				cb(p);
-				gothrough(prime, ptoi(p * p), size, p);
+		for ( i = ptoi( first ) ; i < m ; ++i ) {
+			if ( get( sieve , i ) ) {
+				p = itop( i ) ;
+				callback( p ) ;
+				gothrough( sieve , ptoi( p * p ) , size , p ) ;
 			}
 		}
 
-		for (i = m; i < size; ++i) {
-			if (get(prime, i)) {
-				cb(itop(i));
+		for ( i = m ; i < size ; ++i ) {
+			if ( get( sieve , i ) ) {
+				callback( itop( i ) ) ;
 			}
 		}
 
-		return prime;
-	};
+		return sieve ;
+	} ;
 
-	return eratosthene;
+	return eratosthene ;
 
-};
+} ;
 
-exports.__eratosthene__ = __eratosthene__;
+exports.__eratosthene__ = __eratosthene__ ;
 
 /* js/src/sieve/eratosthene2.js */
 
@@ -290,29 +299,32 @@ exports.__eratosthene23__ = __eratosthene23__;
 
 /**
  * Goes through an array and crosses out non prime numbers.
+ *
+ * @param  {setter} set function ( a , i , v ) that sets value v at index i in array a
  */
+var __gothrough__ = function ( set ) {
 
-var __gothrough__ = function (set) {
+	var gothrough = function ( prime , i , j , k ) {
 
-	var gothrough = function (prime, i, j, k) {
-		for (; i < j; i += k) {
-			set(prime, i, false);
+		for ( ; i < j ; i += k ) {
+			set( prime , i , false ) ;
 		}
+
 	};
 
-	return gothrough;
+	return gothrough ;
 
 };
 
-exports.__gothrough__ = __gothrough__;
+exports.__gothrough__ = __gothrough__ ;
 
 /* js/src/sieve/itop.js */
 
-var itop = function (i) {
-	return i;
-};
+var itop = function ( i ) {
+	return i ;
+} ;
 
-exports.itop = itop;
+exports.itop = itop ;
 
 /* js/src/sieve/itop2.js */
 
@@ -348,11 +360,11 @@ exports.itop231 = itop231;
 
 /* js/src/sieve/ptoi.js */
 
-var ptoi = function (p) {
-	return p;
-};
+var ptoi = function ( p ) {
+	return p ;
+} ;
 
-exports.ptoi = ptoi;
+exports.ptoi = ptoi ;
 
 /* js/src/sieve/ptoi2.js */
 
@@ -364,24 +376,24 @@ exports.ptoi2 = ptoi2;
 
 /* js/src/sieve/ptoi23.js */
 
-var ptoi23 = function (p) {
-	return (p % 6 <= 4) ? ptoi231(p) : ptoi230(p)
+var ptoi23 = function ( p ) {
+	return ( p % 6 <= 4 ) ? ptoi231( p ) : ptoi230( p );
 };
 
 exports.ptoi23 = ptoi23;
 
 /* js/src/sieve/ptoi230.js */
 
-var ptoi230 = function (p) {
-	return ((p + 1) / 3 | 0) - 2;
+var ptoi230 = function ( p ) {
+	return ( ( p + 1 ) / 3 | 0 ) - 2;
 };
 
 exports.ptoi230 = ptoi230;
 
 /* js/src/sieve/ptoi231.js */
 
-var ptoi231 = function (p) {
-	return ((p - 1) / 3 | 0) - 1;
+var ptoi231 = function ( p ) {
+	return ( ( p - 1 ) / 3 | 0 ) - 1;
 };
 
 exports.ptoi231 = ptoi231;
