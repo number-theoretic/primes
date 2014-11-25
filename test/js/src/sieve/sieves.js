@@ -18,7 +18,7 @@ run = function ( sievename , sieve , n ) {
 
 	test( sievename + " " + n , function ( ) {
 
-		var primes , len ;
+		var i , primes , len ;
 
 		primes = [] ;
 
@@ -39,10 +39,9 @@ itertools.product( [
 
 	[
 		[ "eratosthene" , prime.__eratosthene__( alloc , fill , get , gothrough , usqrt ) ],
-		[ "eratosthene2" , prime.__eratosthene2__( alloc , fill , get , gothrough , usqrt ) ]
+		[ "eratosthene2" , prime.__eratosthene2__( alloc , fill , get , gothrough , usqrt ) ],
+		[ "eratosthene23" , prime.__eratosthene23__( alloc , fill , get , gothrough , usqrt ) ]
 	],
-	[
-		10
-	]
+	[ 0 , 1 , 2 , 3 , 4 , 5 , 6 , 10 , 15 , 100 , 200 , 1000 , 7919 ]
 
 ] , 1 , [] ).forEach( functools.partial( functools.star , run ) ) ;
