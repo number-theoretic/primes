@@ -3,50 +3,50 @@
  * Sieve of erathostene skipping all multiples of 2.
  */
 
-var __eratosthene2__ = function (alloc, get, gothrough, sqrt) {
+var __eratosthene2__ = function ( alloc , fill , get , gothrough , usqrt ) {
 
-	var first = 3;
+	var first = 3 ;
 
-	var eratosthene2 = function (a, n, cb) {
+	var eratosthene2 = function ( n , callback ) {
 
-		var size, prime, m, i, p;
+		var size , sieve , m , i , p ;
 
-		if (n <= 2) {
-			return;
+		if ( n <= 2 ) {
+			return null ;
 		}
 
-		cb(2);
+		callback( 2 ) ;
 
-		if (n <= 3) {
-			return;
+		if ( n <= 3 ) {
+			return null ;
 		}
 
-		size = ptoi2(n);
+		size = ptoi2( n ) ;
 
-		prime = alloc(size);
-		fill(prime, 0, size, true);
+		sieve = alloc( size ) ;
+		fill( sieve , 0 , size , true ) ;
 
-		m = ptoi2(sqrt(n));
+		m = ptoi2( usqrt( n ) ) ;
 
-		for (i = ptoi2(first); i < m; ++i) {
-			if (get(prime, i)) {
-				p = itop2(i);
-				cb(p);
-				gothrough(prime, ptoi2(p * p), size, p);
+		for ( i = ptoi2( first ) ; i < m ; ++i ) {
+			if ( get( sieve , i ) ) {
+				p = itop2( i ) ;
+				callback( p ) ;
+				gothrough( sieve , ptoi2( p * p ) , size , p ) ;
 			}
 		}
 
-		for (i = m; i < size; ++i) {
-			if (get(prime, i)) {
-				cb(itop2(i));
+		for ( i = m ; i < size ; ++i ) {
+			if ( get( sieve , i ) ) {
+				callback( itop2( i ) ) ;
 			}
 		}
 
-		return prime;
-	};
+		return sieve ;
+	} ;
 
-	return eratosthene2;
+	return eratosthene2 ;
 
-};
+} ;
 
-exports.__eratosthene2__ = __eratosthene2__;
+exports.__eratosthene2__ = __eratosthene2__ ;
