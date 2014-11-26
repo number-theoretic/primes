@@ -38,9 +38,9 @@ run = function ( sievename , sieve , n ) {
 itertools.product( [
 
 	[
-		[ "eratosthene" , prime.__eratosthene__( alloc , fill , get , gothrough , usqrt ) ],
-		[ "eratosthene2" , prime.__eratosthene2__( alloc , fill , get , gothrough , usqrt ) ],
-		[ "eratosthene23" , prime.__eratosthene23__( alloc , fill , get , gothrough , usqrt ) ]
+		[ "Eratosthenes" , prime.__eratosthenes__( alloc , fill , get , gothrough , usqrt ) ],
+		[ "Eratosthenes - 2" , prime.__eratosthenes2__( alloc , fill , get , gothrough , usqrt ) ],
+		[ "Eratosthenes - 2 , 3" , prime.__eratosthenes23__( alloc , fill , get , gothrough , usqrt ) ]
 	],
 	[ 0 , 1 , 2 , 3 , 4 , 5 , 6 , 10 , 15 , 49 ,100 , 200 , 1000 , 7919 ]
 

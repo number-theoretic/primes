@@ -1,13 +1,13 @@
 
 /**
- * Sieve of erathostene.
+ * Sieve of Eratosthenes.
  */
 
-var __eratosthene__ = function ( alloc , fill , get , gothrough , usqrt ) {
+var __eratosthenes__ = function ( alloc , fill , get , gothrough , usqrt ) {
 
 	var first = 2 ;
 
-	var eratosthene = function ( n , callback ) {
+	var eratosthenes = function ( n , callback ) {
 
 		var size , sieve , m , i , p ;
 
@@ -39,8 +39,8 @@ var __eratosthene__ = function ( alloc , fill , get , gothrough , usqrt ) {
 		return sieve ;
 	} ;
 
-	return eratosthene ;
+	return eratosthenes ;
 
 } ;
 
-exports.__eratosthene__ = __eratosthene__ ;
+exports.__eratosthenes__ = __eratosthenes__ ;

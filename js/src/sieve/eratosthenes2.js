@@ -1,13 +1,13 @@
 
 /**
- * Sieve of erathostene skipping all multiples of 2.
+ * Sieve of Eratosthenes skipping all multiples of 2.
  */
 
-var __eratosthene2__ = function ( alloc , fill , get , gothrough , usqrt ) {
+var __eratosthenes2__ = function ( alloc , fill , get , gothrough , usqrt ) {
 
 	var first = 3 ;
 
-	var eratosthene2 = function ( n , callback ) {
+	var eratosthenes2 = function ( n , callback ) {
 
 		var size , sieve , m , i , p ;
 
@@ -45,8 +45,8 @@ var __eratosthene2__ = function ( alloc , fill , get , gothrough , usqrt ) {
 		return sieve ;
 	} ;
 
-	return eratosthene2 ;
+	return eratosthenes2 ;
 
 } ;
 
-exports.__eratosthene2__ = __eratosthene2__ ;
+exports.__eratosthenes2__ = __eratosthenes2__ ;

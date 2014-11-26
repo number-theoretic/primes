@@ -77,17 +77,17 @@ var __upperbound__ = function ( log , loglog ) {
 exports.__upperbound__ = __upperbound__ ;
 
 /* js/src/sieve */
-/* js/src/sieve/eratosthene.js */
+/* js/src/sieve/eratosthenes.js */
 
 /**
- * Sieve of erathostene.
+ * Sieve of Eratosthenes.
  */
 
-var __eratosthene__ = function ( alloc , fill , get , gothrough , usqrt ) {
+var __eratosthenes__ = function ( alloc , fill , get , gothrough , usqrt ) {
 
 	var first = 2 ;
 
-	var eratosthene = function ( n , callback ) {
+	var eratosthenes = function ( n , callback ) {
 
 		var size , sieve , m , i , p ;
 
@@ -119,23 +119,23 @@ var __eratosthene__ = function ( alloc , fill , get , gothrough , usqrt ) {
 		return sieve ;
 	} ;
 
-	return eratosthene ;
+	return eratosthenes ;
 
 } ;
 
-exports.__eratosthene__ = __eratosthene__ ;
+exports.__eratosthenes__ = __eratosthenes__ ;
 
-/* js/src/sieve/eratosthene2.js */
+/* js/src/sieve/eratosthenes2.js */
 
 /**
- * Sieve of erathostene skipping all multiples of 2.
+ * Sieve of Eratosthenes skipping all multiples of 2.
  */
 
-var __eratosthene2__ = function ( alloc , fill , get , gothrough , usqrt ) {
+var __eratosthenes2__ = function ( alloc , fill , get , gothrough , usqrt ) {
 
 	var first = 3 ;
 
-	var eratosthene2 = function ( n , callback ) {
+	var eratosthenes2 = function ( n , callback ) {
 
 		var size , sieve , m , i , p ;
 
@@ -173,16 +173,16 @@ var __eratosthene2__ = function ( alloc , fill , get , gothrough , usqrt ) {
 		return sieve ;
 	} ;
 
-	return eratosthene2 ;
+	return eratosthenes2 ;
 
 } ;
 
-exports.__eratosthene2__ = __eratosthene2__ ;
+exports.__eratosthenes2__ = __eratosthenes2__ ;
 
-/* js/src/sieve/eratosthene23.js */
+/* js/src/sieve/eratosthenes23.js */
 
 /**
- * Sieve of erathostene skipping all multiples of 2 and 3.
+ * Sieve of Eratosthenes skipping all multiples of 2 and 3.
  *
  * 5 7 11 13 17 19 23 25 29 31 35 37 41 43 47 49 53 55 59 61 65 67 71 73 77 79
  * 0 1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25
@@ -212,11 +212,11 @@ exports.__eratosthene2__ = __eratosthene2__ ;
  * i(191) = 62 = 45 + 13 + 4
  */
 
-var __eratosthene23__ = function ( alloc , fill , get , gothrough , usqrt ) {
+var __eratosthenes23__ = function ( alloc , fill , get , gothrough , usqrt ) {
 
 	var first = 5 ;
 
-	var eratosthene23 = function ( n , callback ) {
+	var eratosthenes23 = function ( n , callback ) {
 
 		var size , sieve , m , i , j , p , l ;
 
@@ -316,11 +316,11 @@ var __eratosthene23__ = function ( alloc , fill , get , gothrough , usqrt ) {
 		return sieve ;
 	} ;
 
-	return eratosthene23 ;
+	return eratosthenes23 ;
 
 } ;
 
-exports.__eratosthene23__ = __eratosthene23__ ;
+exports.__eratosthenes23__ = __eratosthenes23__ ;
 
 /* js/src/sieve/gothrough.js */
 

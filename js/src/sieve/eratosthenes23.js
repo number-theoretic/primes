@@ -1,6 +1,6 @@
 
 /**
- * Sieve of erathostene skipping all multiples of 2 and 3.
+ * Sieve of Eratosthenes skipping all multiples of 2 and 3.
  *
  * 5 7 11 13 17 19 23 25 29 31 35 37 41 43 47 49 53 55 59 61 65 67 71 73 77 79
  * 0 1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25
@@ -30,11 +30,11 @@
  * i(191) = 62 = 45 + 13 + 4
  */
 
-var __eratosthene23__ = function ( alloc , fill , get , gothrough , usqrt ) {
+var __eratosthenes23__ = function ( alloc , fill , get , gothrough , usqrt ) {
 
 	var first = 5 ;
 
-	var eratosthene23 = function ( n , callback ) {
+	var eratosthenes23 = function ( n , callback ) {
 
 		var size , sieve , m , i , j , p , l ;
 
@@ -134,8 +134,8 @@ var __eratosthene23__ = function ( alloc , fill , get , gothrough , usqrt ) {
 		return sieve ;
 	} ;
 
-	return eratosthene23 ;
+	return eratosthenes23 ;
 
 } ;
 
-exports.__eratosthene23__ = __eratosthene23__ ;
+exports.__eratosthenes23__ = __eratosthenes23__ ;
