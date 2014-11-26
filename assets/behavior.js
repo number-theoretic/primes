@@ -101,11 +101,11 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/aureooms/dev/js/js-prime/js/src/sieve/eratosthene.js",
-            "projectPath": "js/src/sieve/eratosthene.js",
-            "targetPath": "sieve/eratosthene",
-            "pageTitle": "sieve/eratosthene",
-            "title": "eratosthene"
+            "sourcePath": "/home/aureooms/dev/js/js-prime/js/src/sieve/eratosthenes.js",
+            "projectPath": "js/src/sieve/eratosthenes.js",
+            "targetPath": "sieve/eratosthenes",
+            "pageTitle": "sieve/eratosthenes",
+            "title": "eratosthenes"
           },
           "depth": 2,
           "outline": []
@@ -121,11 +121,11 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/aureooms/dev/js/js-prime/js/src/sieve/eratosthene2.js",
-            "projectPath": "js/src/sieve/eratosthene2.js",
-            "targetPath": "sieve/eratosthene2",
-            "pageTitle": "sieve/eratosthene2",
-            "title": "eratosthene2"
+            "sourcePath": "/home/aureooms/dev/js/js-prime/js/src/sieve/eratosthenes2.js",
+            "projectPath": "js/src/sieve/eratosthenes2.js",
+            "targetPath": "sieve/eratosthenes2",
+            "pageTitle": "sieve/eratosthenes2",
+            "title": "eratosthenes2"
           },
           "depth": 2,
           "outline": []
@@ -141,11 +141,11 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/aureooms/dev/js/js-prime/js/src/sieve/eratosthene23.js",
-            "projectPath": "js/src/sieve/eratosthene23.js",
-            "targetPath": "sieve/eratosthene23",
-            "pageTitle": "sieve/eratosthene23",
-            "title": "eratosthene23"
+            "sourcePath": "/home/aureooms/dev/js/js-prime/js/src/sieve/eratosthenes23.js",
+            "projectPath": "js/src/sieve/eratosthenes23.js",
+            "targetPath": "sieve/eratosthenes23",
+            "pageTitle": "sieve/eratosthenes23",
+            "title": "eratosthenes23"
           },
           "depth": 2,
           "outline": []
