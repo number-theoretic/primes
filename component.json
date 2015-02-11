@@ -1,0 +1,11 @@
+{
+	"description": "prime numbers code bricks for JavaScript",
+	"version": "1.0.0",
+	"repo": "aureooms/js-prime",
+	"scripts": [
+		"js/dist/prime.js"
+	],
+	"name": "aureooms-js-prime",
+	"license": "AGPL-3.0",
+	"main": "js/dist/prime.js"
+}
