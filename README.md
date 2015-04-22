@@ -13,6 +13,7 @@ prime numbers code bricks for JavaScript
 [![Code Climate](http://img.shields.io/codeclimate/github/aureooms/js-prime.svg?style=flat)](https://codeclimate.com/github/aureooms/js-prime)
 [![NPM downloads per month](http://img.shields.io/npm/dm/aureooms-js-prime.svg?style=flat)](https://www.npmjs.org/package/aureooms-js-prime)
 [![GitHub issues](http://img.shields.io/github/issues/aureooms/js-prime.svg?style=flat)](https://github.com/aureooms/js-prime/issues)
+[![Inline docs](http://inch-ci.org/github/aureooms/js-prime.svg?branch=master&style=shields)](http://inch-ci.org/github/aureooms/js-prime)
 
 reference:
 
