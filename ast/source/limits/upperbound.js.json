@@ -1,0 +1,1198 @@
+{
+  "type": "Program",
+  "body": [
+    {
+      "type": "ExportNamedDeclaration",
+      "declaration": {
+        "type": "FunctionDeclaration",
+        "id": {
+          "type": "Identifier",
+          "name": "__upperbound__",
+          "range": [
+            207,
+            221
+          ],
+          "loc": {
+            "start": {
+              "line": 11,
+              "column": 16
+            },
+            "end": {
+              "line": 11,
+              "column": 30
+            }
+          }
+        },
+        "params": [
+          {
+            "type": "Identifier",
+            "name": "log",
+            "range": [
+              224,
+              227
+            ],
+            "loc": {
+              "start": {
+                "line": 11,
+                "column": 33
+              },
+              "end": {
+                "line": 11,
+                "column": 36
+              }
+            }
+          },
+          {
+            "type": "Identifier",
+            "name": "loglog",
+            "range": [
+              230,
+              236
+            ],
+            "loc": {
+              "start": {
+                "line": 11,
+                "column": 39
+              },
+              "end": {
+                "line": 11,
+                "column": 45
+              }
+            }
+          }
+        ],
+        "body": {
+          "type": "BlockStatement",
+          "body": [
+            {
+              "type": "VariableDeclaration",
+              "declarations": [
+                {
+                  "type": "VariableDeclarator",
+                  "id": {
+                    "type": "Identifier",
+                    "name": "upperbound",
+                    "range": [
+                      247,
+                      257
+                    ],
+                    "loc": {
+                      "start": {
+                        "line": 13,
+                        "column": 5
+                      },
+                      "end": {
+                        "line": 13,
+                        "column": 15
+                      }
+                    }
+                  },
+                  "init": {
+                    "type": "FunctionExpression",
+                    "id": null,
+                    "params": [
+                      {
+                        "type": "Identifier",
+                        "name": "n",
+                        "range": [
+                          271,
+                          272
+                        ],
+                        "loc": {
+                          "start": {
+                            "line": 13,
+                            "column": 29
+                          },
+                          "end": {
+                            "line": 13,
+                            "column": 30
+                          }
+                        }
+                      }
+                    ],
+                    "body": {
+                      "type": "BlockStatement",
+                      "body": [
+                        {
+                          "type": "IfStatement",
+                          "test": {
+                            "type": "BinaryExpression",
+                            "operator": "<",
+                            "left": {
+                              "type": "Identifier",
+                              "name": "n",
+                              "range": [
+                                284,
+                                285
+                              ],
+                              "loc": {
+                                "start": {
+                                  "line": 14,
+                                  "column": 7
+                                },
+                                "end": {
+                                  "line": 14,
+                                  "column": 8
+                                }
+                              }
+                            },
+                            "right": {
+                              "type": "Literal",
+                              "value": 55,
+                              "raw": "55",
+                              "range": [
+                                288,
+                                290
+                              ],
+                              "loc": {
+                                "start": {
+                                  "line": 14,
+                                  "column": 11
+                                },
+                                "end": {
+                                  "line": 14,
+                                  "column": 13
+                                }
+                              }
+                            },
+                            "range": [
+                              284,
+                              290
+                            ],
+                            "loc": {
+                              "start": {
+                                "line": 14,
+                                "column": 7
+                              },
+                              "end": {
+                                "line": 14,
+                                "column": 13
+                              }
+                            }
+                          },
+                          "consequent": {
+                            "type": "BlockStatement",
+                            "body": [
+                              {
+                                "type": "ReturnStatement",
+                                "argument": {
+                                  "type": "BinaryExpression",
+                                  "operator": "+",
+                                  "left": {
+                                    "type": "BinaryExpression",
+                                    "operator": "*",
+                                    "left": {
+                                      "type": "Identifier",
+                                      "name": "n",
+                                      "range": [
+                                        305,
+                                        306
+                                      ],
+                                      "loc": {
+                                        "start": {
+                                          "line": 15,
+                                          "column": 10
+                                        },
+                                        "end": {
+                                          "line": 15,
+                                          "column": 11
+                                        }
+                                      }
+                                    },
+                                    "right": {
+                                      "type": "BinaryExpression",
+                                      "operator": "+",
+                                      "left": {
+                                        "type": "CallExpression",
+                                        "callee": {
+                                          "type": "Identifier",
+                                          "name": "log",
+                                          "range": [
+                                            311,
+                                            314
+                                          ],
+                                          "loc": {
+                                            "start": {
+                                              "line": 15,
+                                              "column": 16
+                                            },
+                                            "end": {
+                                              "line": 15,
+                                              "column": 19
+                                            }
+                                          }
+                                        },
+                                        "arguments": [
+                                          {
+                                            "type": "Identifier",
+                                            "name": "n",
+                                            "range": [
+                                              316,
+                                              317
+                                            ],
+                                            "loc": {
+                                              "start": {
+                                                "line": 15,
+                                                "column": 21
+                                              },
+                                              "end": {
+                                                "line": 15,
+                                                "column": 22
+                                              }
+                                            }
+                                          }
+                                        ],
+                                        "range": [
+                                          311,
+                                          319
+                                        ],
+                                        "loc": {
+                                          "start": {
+                                            "line": 15,
+                                            "column": 16
+                                          },
+                                          "end": {
+                                            "line": 15,
+                                            "column": 24
+                                          }
+                                        }
+                                      },
+                                      "right": {
+                                        "type": "CallExpression",
+                                        "callee": {
+                                          "type": "Identifier",
+                                          "name": "loglog",
+                                          "range": [
+                                            322,
+                                            328
+                                          ],
+                                          "loc": {
+                                            "start": {
+                                              "line": 15,
+                                              "column": 27
+                                            },
+                                            "end": {
+                                              "line": 15,
+                                              "column": 33
+                                            }
+                                          }
+                                        },
+                                        "arguments": [
+                                          {
+                                            "type": "Identifier",
+                                            "name": "n",
+                                            "range": [
+                                              330,
+                                              331
+                                            ],
+                                            "loc": {
+                                              "start": {
+                                                "line": 15,
+                                                "column": 35
+                                              },
+                                              "end": {
+                                                "line": 15,
+                                                "column": 36
+                                              }
+                                            }
+                                          }
+                                        ],
+                                        "range": [
+                                          322,
+                                          333
+                                        ],
+                                        "loc": {
+                                          "start": {
+                                            "line": 15,
+                                            "column": 27
+                                          },
+                                          "end": {
+                                            "line": 15,
+                                            "column": 38
+                                          }
+                                        }
+                                      },
+                                      "range": [
+                                        311,
+                                        333
+                                      ],
+                                      "loc": {
+                                        "start": {
+                                          "line": 15,
+                                          "column": 16
+                                        },
+                                        "end": {
+                                          "line": 15,
+                                          "column": 38
+                                        }
+                                      }
+                                    },
+                                    "range": [
+                                      305,
+                                      335
+                                    ],
+                                    "loc": {
+                                      "start": {
+                                        "line": 15,
+                                        "column": 10
+                                      },
+                                      "end": {
+                                        "line": 15,
+                                        "column": 40
+                                      }
+                                    }
+                                  },
+                                  "right": {
+                                    "type": "Literal",
+                                    "value": 3,
+                                    "raw": "3",
+                                    "range": [
+                                      338,
+                                      339
+                                    ],
+                                    "loc": {
+                                      "start": {
+                                        "line": 15,
+                                        "column": 43
+                                      },
+                                      "end": {
+                                        "line": 15,
+                                        "column": 44
+                                      }
+                                    }
+                                  },
+                                  "range": [
+                                    305,
+                                    339
+                                  ],
+                                  "loc": {
+                                    "start": {
+                                      "line": 15,
+                                      "column": 10
+                                    },
+                                    "end": {
+                                      "line": 15,
+                                      "column": 44
+                                    }
+                                  }
+                                },
+                                "range": [
+                                  298,
+                                  341
+                                ],
+                                "loc": {
+                                  "start": {
+                                    "line": 15,
+                                    "column": 3
+                                  },
+                                  "end": {
+                                    "line": 15,
+                                    "column": 46
+                                  }
+                                }
+                              }
+                            ],
+                            "range": [
+                              293,
+                              345
+                            ],
+                            "loc": {
+                              "start": {
+                                "line": 14,
+                                "column": 16
+                              },
+                              "end": {
+                                "line": 16,
+                                "column": 3
+                              }
+                            }
+                          },
+                          "alternate": {
+                            "type": "IfStatement",
+                            "test": {
+                              "type": "BinaryExpression",
+                              "operator": "<",
+                              "left": {
+                                "type": "Identifier",
+                                "name": "n",
+                                "range": [
+                                  358,
+                                  359
+                                ],
+                                "loc": {
+                                  "start": {
+                                    "line": 17,
+                                    "column": 12
+                                  },
+                                  "end": {
+                                    "line": 17,
+                                    "column": 13
+                                  }
+                                }
+                              },
+                              "right": {
+                                "type": "Literal",
+                                "value": 39018,
+                                "raw": "39018",
+                                "range": [
+                                  362,
+                                  367
+                                ],
+                                "loc": {
+                                  "start": {
+                                    "line": 17,
+                                    "column": 16
+                                  },
+                                  "end": {
+                                    "line": 17,
+                                    "column": 21
+                                  }
+                                }
+                              },
+                              "range": [
+                                358,
+                                367
+                              ],
+                              "loc": {
+                                "start": {
+                                  "line": 17,
+                                  "column": 12
+                                },
+                                "end": {
+                                  "line": 17,
+                                  "column": 21
+                                }
+                              }
+                            },
+                            "consequent": {
+                              "type": "BlockStatement",
+                              "body": [
+                                {
+                                  "type": "ReturnStatement",
+                                  "argument": {
+                                    "type": "BinaryExpression",
+                                    "operator": "*",
+                                    "left": {
+                                      "type": "Identifier",
+                                      "name": "n",
+                                      "range": [
+                                        382,
+                                        383
+                                      ],
+                                      "loc": {
+                                        "start": {
+                                          "line": 18,
+                                          "column": 10
+                                        },
+                                        "end": {
+                                          "line": 18,
+                                          "column": 11
+                                        }
+                                      }
+                                    },
+                                    "right": {
+                                      "type": "BinaryExpression",
+                                      "operator": "-",
+                                      "left": {
+                                        "type": "BinaryExpression",
+                                        "operator": "+",
+                                        "left": {
+                                          "type": "CallExpression",
+                                          "callee": {
+                                            "type": "Identifier",
+                                            "name": "log",
+                                            "range": [
+                                              388,
+                                              391
+                                            ],
+                                            "loc": {
+                                              "start": {
+                                                "line": 18,
+                                                "column": 16
+                                              },
+                                              "end": {
+                                                "line": 18,
+                                                "column": 19
+                                              }
+                                            }
+                                          },
+                                          "arguments": [
+                                            {
+                                              "type": "Identifier",
+                                              "name": "n",
+                                              "range": [
+                                                393,
+                                                394
+                                              ],
+                                              "loc": {
+                                                "start": {
+                                                  "line": 18,
+                                                  "column": 21
+                                                },
+                                                "end": {
+                                                  "line": 18,
+                                                  "column": 22
+                                                }
+                                              }
+                                            }
+                                          ],
+                                          "range": [
+                                            388,
+                                            396
+                                          ],
+                                          "loc": {
+                                            "start": {
+                                              "line": 18,
+                                              "column": 16
+                                            },
+                                            "end": {
+                                              "line": 18,
+                                              "column": 24
+                                            }
+                                          }
+                                        },
+                                        "right": {
+                                          "type": "CallExpression",
+                                          "callee": {
+                                            "type": "Identifier",
+                                            "name": "loglog",
+                                            "range": [
+                                              399,
+                                              405
+                                            ],
+                                            "loc": {
+                                              "start": {
+                                                "line": 18,
+                                                "column": 27
+                                              },
+                                              "end": {
+                                                "line": 18,
+                                                "column": 33
+                                              }
+                                            }
+                                          },
+                                          "arguments": [
+                                            {
+                                              "type": "Identifier",
+                                              "name": "n",
+                                              "range": [
+                                                407,
+                                                408
+                                              ],
+                                              "loc": {
+                                                "start": {
+                                                  "line": 18,
+                                                  "column": 35
+                                                },
+                                                "end": {
+                                                  "line": 18,
+                                                  "column": 36
+                                                }
+                                              }
+                                            }
+                                          ],
+                                          "range": [
+                                            399,
+                                            410
+                                          ],
+                                          "loc": {
+                                            "start": {
+                                              "line": 18,
+                                              "column": 27
+                                            },
+                                            "end": {
+                                              "line": 18,
+                                              "column": 38
+                                            }
+                                          }
+                                        },
+                                        "range": [
+                                          388,
+                                          410
+                                        ],
+                                        "loc": {
+                                          "start": {
+                                            "line": 18,
+                                            "column": 16
+                                          },
+                                          "end": {
+                                            "line": 18,
+                                            "column": 38
+                                          }
+                                        }
+                                      },
+                                      "right": {
+                                        "type": "Literal",
+                                        "value": 0.5,
+                                        "raw": "0.5",
+                                        "range": [
+                                          413,
+                                          416
+                                        ],
+                                        "loc": {
+                                          "start": {
+                                            "line": 18,
+                                            "column": 41
+                                          },
+                                          "end": {
+                                            "line": 18,
+                                            "column": 44
+                                          }
+                                        }
+                                      },
+                                      "range": [
+                                        388,
+                                        416
+                                      ],
+                                      "loc": {
+                                        "start": {
+                                          "line": 18,
+                                          "column": 16
+                                        },
+                                        "end": {
+                                          "line": 18,
+                                          "column": 44
+                                        }
+                                      }
+                                    },
+                                    "range": [
+                                      382,
+                                      418
+                                    ],
+                                    "loc": {
+                                      "start": {
+                                        "line": 18,
+                                        "column": 10
+                                      },
+                                      "end": {
+                                        "line": 18,
+                                        "column": 46
+                                      }
+                                    }
+                                  },
+                                  "range": [
+                                    375,
+                                    420
+                                  ],
+                                  "loc": {
+                                    "start": {
+                                      "line": 18,
+                                      "column": 3
+                                    },
+                                    "end": {
+                                      "line": 18,
+                                      "column": 48
+                                    }
+                                  }
+                                }
+                              ],
+                              "range": [
+                                370,
+                                424
+                              ],
+                              "loc": {
+                                "start": {
+                                  "line": 17,
+                                  "column": 24
+                                },
+                                "end": {
+                                  "line": 19,
+                                  "column": 3
+                                }
+                              }
+                            },
+                            "alternate": {
+                              "type": "BlockStatement",
+                              "body": [
+                                {
+                                  "type": "ReturnStatement",
+                                  "argument": {
+                                    "type": "BinaryExpression",
+                                    "operator": "*",
+                                    "left": {
+                                      "type": "Identifier",
+                                      "name": "n",
+                                      "range": [
+                                        443,
+                                        444
+                                      ],
+                                      "loc": {
+                                        "start": {
+                                          "line": 21,
+                                          "column": 10
+                                        },
+                                        "end": {
+                                          "line": 21,
+                                          "column": 11
+                                        }
+                                      }
+                                    },
+                                    "right": {
+                                      "type": "BinaryExpression",
+                                      "operator": "-",
+                                      "left": {
+                                        "type": "BinaryExpression",
+                                        "operator": "+",
+                                        "left": {
+                                          "type": "CallExpression",
+                                          "callee": {
+                                            "type": "Identifier",
+                                            "name": "log",
+                                            "range": [
+                                              449,
+                                              452
+                                            ],
+                                            "loc": {
+                                              "start": {
+                                                "line": 21,
+                                                "column": 16
+                                              },
+                                              "end": {
+                                                "line": 21,
+                                                "column": 19
+                                              }
+                                            }
+                                          },
+                                          "arguments": [
+                                            {
+                                              "type": "Identifier",
+                                              "name": "n",
+                                              "range": [
+                                                454,
+                                                455
+                                              ],
+                                              "loc": {
+                                                "start": {
+                                                  "line": 21,
+                                                  "column": 21
+                                                },
+                                                "end": {
+                                                  "line": 21,
+                                                  "column": 22
+                                                }
+                                              }
+                                            }
+                                          ],
+                                          "range": [
+                                            449,
+                                            457
+                                          ],
+                                          "loc": {
+                                            "start": {
+                                              "line": 21,
+                                              "column": 16
+                                            },
+                                            "end": {
+                                              "line": 21,
+                                              "column": 24
+                                            }
+                                          }
+                                        },
+                                        "right": {
+                                          "type": "CallExpression",
+                                          "callee": {
+                                            "type": "Identifier",
+                                            "name": "loglog",
+                                            "range": [
+                                              460,
+                                              466
+                                            ],
+                                            "loc": {
+                                              "start": {
+                                                "line": 21,
+                                                "column": 27
+                                              },
+                                              "end": {
+                                                "line": 21,
+                                                "column": 33
+                                              }
+                                            }
+                                          },
+                                          "arguments": [
+                                            {
+                                              "type": "Identifier",
+                                              "name": "n",
+                                              "range": [
+                                                468,
+                                                469
+                                              ],
+                                              "loc": {
+                                                "start": {
+                                                  "line": 21,
+                                                  "column": 35
+                                                },
+                                                "end": {
+                                                  "line": 21,
+                                                  "column": 36
+                                                }
+                                              }
+                                            }
+                                          ],
+                                          "range": [
+                                            460,
+                                            471
+                                          ],
+                                          "loc": {
+                                            "start": {
+                                              "line": 21,
+                                              "column": 27
+                                            },
+                                            "end": {
+                                              "line": 21,
+                                              "column": 38
+                                            }
+                                          }
+                                        },
+                                        "range": [
+                                          449,
+                                          471
+                                        ],
+                                        "loc": {
+                                          "start": {
+                                            "line": 21,
+                                            "column": 16
+                                          },
+                                          "end": {
+                                            "line": 21,
+                                            "column": 38
+                                          }
+                                        }
+                                      },
+                                      "right": {
+                                        "type": "Literal",
+                                        "value": 0.9484,
+                                        "raw": "0.9484",
+                                        "range": [
+                                          474,
+                                          480
+                                        ],
+                                        "loc": {
+                                          "start": {
+                                            "line": 21,
+                                            "column": 41
+                                          },
+                                          "end": {
+                                            "line": 21,
+                                            "column": 47
+                                          }
+                                        }
+                                      },
+                                      "range": [
+                                        449,
+                                        480
+                                      ],
+                                      "loc": {
+                                        "start": {
+                                          "line": 21,
+                                          "column": 16
+                                        },
+                                        "end": {
+                                          "line": 21,
+                                          "column": 47
+                                        }
+                                      }
+                                    },
+                                    "range": [
+                                      443,
+                                      482
+                                    ],
+                                    "loc": {
+                                      "start": {
+                                        "line": 21,
+                                        "column": 10
+                                      },
+                                      "end": {
+                                        "line": 21,
+                                        "column": 49
+                                      }
+                                    }
+                                  },
+                                  "range": [
+                                    436,
+                                    484
+                                  ],
+                                  "loc": {
+                                    "start": {
+                                      "line": 21,
+                                      "column": 3
+                                    },
+                                    "end": {
+                                      "line": 21,
+                                      "column": 51
+                                    }
+                                  }
+                                }
+                              ],
+                              "range": [
+                                431,
+                                488
+                              ],
+                              "loc": {
+                                "start": {
+                                  "line": 20,
+                                  "column": 6
+                                },
+                                "end": {
+                                  "line": 22,
+                                  "column": 3
+                                }
+                              }
+                            },
+                            "range": [
+                              353,
+                              488
+                            ],
+                            "loc": {
+                              "start": {
+                                "line": 17,
+                                "column": 7
+                              },
+                              "end": {
+                                "line": 22,
+                                "column": 3
+                              }
+                            }
+                          },
+                          "range": [
+                            279,
+                            488
+                          ],
+                          "loc": {
+                            "start": {
+                              "line": 14,
+                              "column": 2
+                            },
+                            "end": {
+                              "line": 22,
+                              "column": 3
+                            }
+                          }
+                        }
+                      ],
+                      "range": [
+                        275,
+                        491
+                      ],
+                      "loc": {
+                        "start": {
+                          "line": 13,
+                          "column": 33
+                        },
+                        "end": {
+                          "line": 23,
+                          "column": 2
+                        }
+                      }
+                    },
+                    "generator": false,
+                    "expression": false,
+                    "range": [
+                      260,
+                      491
+                    ],
+                    "loc": {
+                      "start": {
+                        "line": 13,
+                        "column": 18
+                      },
+                      "end": {
+                        "line": 23,
+                        "column": 2
+                      }
+                    }
+                  },
+                  "range": [
+                    247,
+                    491
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 13,
+                      "column": 5
+                    },
+                    "end": {
+                      "line": 23,
+                      "column": 2
+                    }
+                  }
+                }
+              ],
+              "kind": "var",
+              "range": [
+                243,
+                493
+              ],
+              "loc": {
+                "start": {
+                  "line": 13,
+                  "column": 1
+                },
+                "end": {
+                  "line": 23,
+                  "column": 4
+                }
+              }
+            },
+            {
+              "type": "ReturnStatement",
+              "argument": {
+                "type": "Identifier",
+                "name": "upperbound",
+                "range": [
+                  503,
+                  513
+                ],
+                "loc": {
+                  "start": {
+                    "line": 25,
+                    "column": 8
+                  },
+                  "end": {
+                    "line": 25,
+                    "column": 18
+                  }
+                }
+              },
+              "range": [
+                496,
+                515
+              ],
+              "loc": {
+                "start": {
+                  "line": 25,
+                  "column": 1
+                },
+                "end": {
+                  "line": 25,
+                  "column": 20
+                }
+              }
+            }
+          ],
+          "range": [
+            239,
+            518
+          ],
+          "loc": {
+            "start": {
+              "line": 11,
+              "column": 48
+            },
+            "end": {
+              "line": 27,
+              "column": 1
+            }
+          }
+        },
+        "generator": false,
+        "expression": false,
+        "range": [
+          198,
+          518
+        ],
+        "loc": {
+          "start": {
+            "line": 11,
+            "column": 7
+          },
+          "end": {
+            "line": 27,
+            "column": 1
+          }
+        },
+        "leadingComments": [
+          {
+            "type": "Block",
+            "value": "*\n * Upper bound for computing the nth prime number.\n *\n * see http://math.univ-lille1.fr/~ramare/TME-EMT/Articles/Art01.html\n *\n * /!\\ n = 1 will work only if loglog(0) returns 0\n *\n ",
+            "range": [
+              1,
+              189
+            ],
+            "loc": {
+              "start": {
+                "line": 2,
+                "column": 0
+              },
+              "end": {
+                "line": 9,
+                "column": 3
+              }
+            }
+          }
+        ],
+        "trailingComments": []
+      },
+      "specifiers": [],
+      "source": null,
+      "range": [
+        191,
+        518
+      ],
+      "loc": {
+        "start": {
+          "line": 11,
+          "column": 0
+        },
+        "end": {
+          "line": 27,
+          "column": 1
+        }
+      },
+      "leadingComments": [
+        {
+          "type": "Block",
+          "value": "*\n * Upper bound for computing the nth prime number.\n *\n * see http://math.univ-lille1.fr/~ramare/TME-EMT/Articles/Art01.html\n *\n * /!\\ n = 1 will work only if loglog(0) returns 0\n *\n ",
+          "range": [
+            1,
+            189
+          ],
+          "loc": {
+            "start": {
+              "line": 2,
+              "column": 0
+            },
+            "end": {
+              "line": 9,
+              "column": 3
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "sourceType": "module",
+  "range": [
+    191,
+    518
+  ],
+  "loc": {
+    "start": {
+      "line": 11,
+      "column": 0
+    },
+    "end": {
+      "line": 27,
+      "column": 1
+    }
+  },
+  "comments": [
+    {
+      "type": "Block",
+      "value": "*\n * Upper bound for computing the nth prime number.\n *\n * see http://math.univ-lille1.fr/~ramare/TME-EMT/Articles/Art01.html\n *\n * /!\\ n = 1 will work only if loglog(0) returns 0\n *\n ",
+      "range": [
+        1,
+        189
+      ],
+      "loc": {
+        "start": {
+          "line": 2,
+          "column": 0
+        },
+        "end": {
+          "line": 9,
+          "column": 3
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,498 @@
+{
+  "type": "Program",
+  "body": [
+    {
+      "type": "ImportDeclaration",
+      "specifiers": [
+        {
+          "type": "ImportSpecifier",
+          "local": {
+            "type": "Identifier",
+            "name": "itop230",
+            "range": [
+              9,
+              16
+            ],
+            "loc": {
+              "start": {
+                "line": 1,
+                "column": 9
+              },
+              "end": {
+                "line": 1,
+                "column": 16
+              }
+            }
+          },
+          "imported": {
+            "type": "Identifier",
+            "name": "itop230",
+            "range": [
+              9,
+              16
+            ],
+            "loc": {
+              "start": {
+                "line": 1,
+                "column": 9
+              },
+              "end": {
+                "line": 1,
+                "column": 16
+              }
+            }
+          },
+          "range": [
+            9,
+            16
+          ],
+          "loc": {
+            "start": {
+              "line": 1,
+              "column": 9
+            },
+            "end": {
+              "line": 1,
+              "column": 16
+            }
+          }
+        },
+        {
+          "type": "ImportSpecifier",
+          "local": {
+            "type": "Identifier",
+            "name": "itop231",
+            "range": [
+              19,
+              26
+            ],
+            "loc": {
+              "start": {
+                "line": 1,
+                "column": 19
+              },
+              "end": {
+                "line": 1,
+                "column": 26
+              }
+            }
+          },
+          "imported": {
+            "type": "Identifier",
+            "name": "itop231",
+            "range": [
+              19,
+              26
+            ],
+            "loc": {
+              "start": {
+                "line": 1,
+                "column": 19
+              },
+              "end": {
+                "line": 1,
+                "column": 26
+              }
+            }
+          },
+          "range": [
+            19,
+            26
+          ],
+          "loc": {
+            "start": {
+              "line": 1,
+              "column": 19
+            },
+            "end": {
+              "line": 1,
+              "column": 26
+            }
+          }
+        }
+      ],
+      "source": {
+        "type": "Literal",
+        "value": "./",
+        "raw": "'./'",
+        "range": [
+          34,
+          38
+        ],
+        "loc": {
+          "start": {
+            "line": 1,
+            "column": 34
+          },
+          "end": {
+            "line": 1,
+            "column": 38
+          }
+        }
+      },
+      "range": [
+        0,
+        40
+      ],
+      "loc": {
+        "start": {
+          "line": 1,
+          "column": 0
+        },
+        "end": {
+          "line": 1,
+          "column": 40
+        }
+      }
+    },
+    {
+      "type": "ExportNamedDeclaration",
+      "declaration": {
+        "type": "FunctionDeclaration",
+        "id": {
+          "type": "Identifier",
+          "name": "itop23",
+          "range": [
+            58,
+            64
+          ],
+          "loc": {
+            "start": {
+              "line": 3,
+              "column": 16
+            },
+            "end": {
+              "line": 3,
+              "column": 22
+            }
+          }
+        },
+        "params": [
+          {
+            "type": "Identifier",
+            "name": "i",
+            "range": [
+              67,
+              68
+            ],
+            "loc": {
+              "start": {
+                "line": 3,
+                "column": 25
+              },
+              "end": {
+                "line": 3,
+                "column": 26
+              }
+            }
+          }
+        ],
+        "body": {
+          "type": "BlockStatement",
+          "body": [
+            {
+              "type": "ReturnStatement",
+              "argument": {
+                "type": "ConditionalExpression",
+                "test": {
+                  "type": "BinaryExpression",
+                  "operator": "===",
+                  "left": {
+                    "type": "BinaryExpression",
+                    "operator": "%",
+                    "left": {
+                      "type": "Identifier",
+                      "name": "i",
+                      "range": [
+                        83,
+                        84
+                      ],
+                      "loc": {
+                        "start": {
+                          "line": 4,
+                          "column": 10
+                        },
+                        "end": {
+                          "line": 4,
+                          "column": 11
+                        }
+                      }
+                    },
+                    "right": {
+                      "type": "Literal",
+                      "value": 2,
+                      "raw": "2",
+                      "range": [
+                        87,
+                        88
+                      ],
+                      "loc": {
+                        "start": {
+                          "line": 4,
+                          "column": 14
+                        },
+                        "end": {
+                          "line": 4,
+                          "column": 15
+                        }
+                      }
+                    },
+                    "range": [
+                      83,
+                      88
+                    ],
+                    "loc": {
+                      "start": {
+                        "line": 4,
+                        "column": 10
+                      },
+                      "end": {
+                        "line": 4,
+                        "column": 15
+                      }
+                    }
+                  },
+                  "right": {
+                    "type": "Literal",
+                    "value": 0,
+                    "raw": "0",
+                    "range": [
+                      93,
+                      94
+                    ],
+                    "loc": {
+                      "start": {
+                        "line": 4,
+                        "column": 20
+                      },
+                      "end": {
+                        "line": 4,
+                        "column": 21
+                      }
+                    }
+                  },
+                  "range": [
+                    83,
+                    94
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 4,
+                      "column": 10
+                    },
+                    "end": {
+                      "line": 4,
+                      "column": 21
+                    }
+                  }
+                },
+                "consequent": {
+                  "type": "CallExpression",
+                  "callee": {
+                    "type": "Identifier",
+                    "name": "itop230",
+                    "range": [
+                      99,
+                      106
+                    ],
+                    "loc": {
+                      "start": {
+                        "line": 4,
+                        "column": 26
+                      },
+                      "end": {
+                        "line": 4,
+                        "column": 33
+                      }
+                    }
+                  },
+                  "arguments": [
+                    {
+                      "type": "Identifier",
+                      "name": "i",
+                      "range": [
+                        108,
+                        109
+                      ],
+                      "loc": {
+                        "start": {
+                          "line": 4,
+                          "column": 35
+                        },
+                        "end": {
+                          "line": 4,
+                          "column": 36
+                        }
+                      }
+                    }
+                  ],
+                  "range": [
+                    99,
+                    111
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 4,
+                      "column": 26
+                    },
+                    "end": {
+                      "line": 4,
+                      "column": 38
+                    }
+                  }
+                },
+                "alternate": {
+                  "type": "CallExpression",
+                  "callee": {
+                    "type": "Identifier",
+                    "name": "itop231",
+                    "range": [
+                      114,
+                      121
+                    ],
+                    "loc": {
+                      "start": {
+                        "line": 4,
+                        "column": 41
+                      },
+                      "end": {
+                        "line": 4,
+                        "column": 48
+                      }
+                    }
+                  },
+                  "arguments": [
+                    {
+                      "type": "Identifier",
+                      "name": "i",
+                      "range": [
+                        123,
+                        124
+                      ],
+                      "loc": {
+                        "start": {
+                          "line": 4,
+                          "column": 50
+                        },
+                        "end": {
+                          "line": 4,
+                          "column": 51
+                        }
+                      }
+                    }
+                  ],
+                  "range": [
+                    114,
+                    126
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 4,
+                      "column": 41
+                    },
+                    "end": {
+                      "line": 4,
+                      "column": 53
+                    }
+                  }
+                },
+                "range": [
+                  81,
+                  126
+                ],
+                "loc": {
+                  "start": {
+                    "line": 4,
+                    "column": 8
+                  },
+                  "end": {
+                    "line": 4,
+                    "column": 53
+                  }
+                }
+              },
+              "range": [
+                74,
+                128
+              ],
+              "loc": {
+                "start": {
+                  "line": 4,
+                  "column": 1
+                },
+                "end": {
+                  "line": 4,
+                  "column": 55
+                }
+              }
+            }
+          ],
+          "range": [
+            71,
+            130
+          ],
+          "loc": {
+            "start": {
+              "line": 3,
+              "column": 29
+            },
+            "end": {
+              "line": 5,
+              "column": 1
+            }
+          }
+        },
+        "generator": false,
+        "expression": false,
+        "range": [
+          49,
+          130
+        ],
+        "loc": {
+          "start": {
+            "line": 3,
+            "column": 7
+          },
+          "end": {
+            "line": 5,
+            "column": 1
+          }
+        },
+        "leadingComments": [],
+        "trailingComments": []
+      },
+      "specifiers": [],
+      "source": null,
+      "range": [
+        42,
+        130
+      ],
+      "loc": {
+        "start": {
+          "line": 3,
+          "column": 0
+        },
+        "end": {
+          "line": 5,
+          "column": 1
+        }
+      }
+    }
+  ],
+  "sourceType": "module",
+  "range": [
+    0,
+    130
+  ],
+  "loc": {
+    "start": {
+      "line": 1,
+      "column": 0
+    },
+    "end": {
+      "line": 5,
+      "column": 1
+    }
+  },
+  "comments": []
+}
