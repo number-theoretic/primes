@@ -1,0 +1,4 @@
+
+export function itop23 ( i ) {
+	return ( i % 2 === 0 ) ? itop230( i ) : itop231( i ) ;
+}
