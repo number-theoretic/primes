@@ -1,4 +1,4 @@
-
+import { ptoi2 , itop2 } from './' ;
 /**
  * Sieve of Eratosthenes skipping all multiples of 2.
  */

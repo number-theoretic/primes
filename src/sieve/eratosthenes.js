@@ -1,3 +1,4 @@
+import { ptoi , itop } from './' ;
 
 /**
  * Sieve of Eratosthenes.
