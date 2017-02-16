@@ -1,6 +1,6 @@
 import test from 'ava' ;
 
-import { loge , logloge } from "aureooms-js-number" ;
+import { loge , logloge } from "@aureooms/js-number" ;
 
 import * as prime from '../../../src' ;
 

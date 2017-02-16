@@ -1,9 +1,9 @@
 import test from 'ava' ;
 
-import { alloc , fill , get , set } from "aureooms-js-array" ;
-import { usqrt } from "aureooms-js-uint32" ;
-import functools from "aureooms-js-functools" ;
-import * as itertools from "aureooms-js-itertools" ;
+import { alloc , fill , get , set } from "@aureooms/js-array" ;
+import { usqrt } from "@aureooms/js-uint32" ;
+import functools from "@aureooms/js-functools" ;
+import * as itertools from "@aureooms/js-itertools" ;
 
 const data = require( "../../data/1000.json" ) ;
 
