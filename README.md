@@ -1,7 +1,11 @@
-[js-prime](http://aureooms.github.io/js-prime)
+[@aureooms/js-prime](https://aureooms.github.io/js-prime)
 ==
 
+<img src="https://imgs.xkcd.com/comics/blownapart_color.jpg" width="864">
+
 Prime numbers algorithms for JavaScript.
+See [docs](https://aureooms.github.io/js-prime).
+Parent is [@aureooms/js-algorithms](https://github.com/aureooms/js-algorithms).
 
 [![License](https://img.shields.io/github/license/aureooms/js-prime.svg?style=flat)](https://raw.githubusercontent.com/aureooms/js-prime/master/LICENSE)
 [![NPM version](https://img.shields.io/npm/v/@aureooms/js-prime.svg?style=flat)](https://www.npmjs.org/package/@aureooms/js-prime)
