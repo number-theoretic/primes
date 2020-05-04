@@ -53,39 +53,31 @@
 
 <div class="content" data-ice="content"><h1 data-ice="title">src/analyze/factorize.js</h1>
 <pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">
-export function __factorize__ ( two, iaddone, iszero, gtone, divmod ) {
+export function __factorize__ ( two, iadd1, jz, gt1, divmod ) {
 
-	var factorize = function ( n, factors ) {
+	return function* factorize ( n ) {
 
-		var divisor , qr , q , r ;
+		let divisor = two ( ) ;
 
-		divisor = two ( ) ;
+		while ( gt1 ( n ) ) {
 
-		while ( gtone ( n ) ) {
+			const [ q , r ] = divmod ( n , divisor ) ;
 
-			// [ q , r ] = divmod ( n , divisor ) ; FOR ES6
-			qr = divmod ( n , divisor ) ;
+			if ( jz ( r ) ) {
 
-			q = qr[0] ;
-			r = qr[1] ;
-
-			if ( iszero ( r ) ) {
-
-				factors . push ( divisor ) ;
+				yield divisor ;
 
 				n = q ;
 
 			}
 
 			else {
-				divisor = iaddone ( divisor ) ;
+				divisor = iadd1 ( divisor ) ;
 			}
 
 		}
 
 	} ;
-
-	return factorize ;
 
 }
 </code></pre>
