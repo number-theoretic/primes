@@ -1,7 +1,7 @@
 import test from 'ava' ;
 
 import { alloc , fill , get , set } from "@aureooms/js-array" ;
-import { usqrt } from "@aureooms/js-uint32" ;
+import { usqrt32 } from "@aureooms/js-uint32" ;
 import functools from "@aureooms/js-functools" ;
 import * as itertools from "@aureooms/js-itertools" ;
 
@@ -31,9 +31,9 @@ function run ( [ [ sievename , sieve ] , n ] ) {
 const inputs = itertools.product( [
 
 	[
-		[ "Eratosthenes" , prime.__eratosthenes__( alloc , fill , get , gothrough , usqrt ) ],
-		[ "Eratosthenes - 2" , prime.__eratosthenes2__( alloc , fill , get , gothrough , usqrt ) ],
-		[ "Eratosthenes - 2 , 3" , prime.__eratosthenes23__( alloc , fill , get , gothrough , usqrt ) ]
+		[ "Eratosthenes" , prime.__eratosthenes__( alloc , fill , get , gothrough , usqrt32 ) ],
+		[ "Eratosthenes - 2" , prime.__eratosthenes2__( alloc , fill , get , gothrough , usqrt32 ) ],
+		[ "Eratosthenes - 2 , 3" , prime.__eratosthenes23__( alloc , fill , get , gothrough , usqrt32 ) ]
 	],
 	[ 0 , 1 , 2 , 3 , 4 , 5 , 6 , 10 , 15 , 49 ,100 , 200 , 1000 , 7919 ]
 
