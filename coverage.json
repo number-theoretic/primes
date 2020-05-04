@@ -3,12 +3,14 @@
   "expectCount": 18,
   "actualCount": 7,
   "files": {
-    "src/sieve/eratosthenes23.js": {
+    "src/analyze/factorize.js": {
       "expectCount": 1,
-      "actualCount": 1,
-      "undocumentLines": []
+      "actualCount": 0,
+      "undocumentLines": [
+        2
+      ]
     },
-    "src/sieve/eratosthenes2.js": {
+    "src/limits/upperbound.js": {
       "expectCount": 1,
       "actualCount": 1,
       "undocumentLines": []
@@ -18,24 +20,17 @@
       "actualCount": 1,
       "undocumentLines": []
     },
-    "src/analyze/factorize.js": {
+    "src/sieve/eratosthenes2.js": {
       "expectCount": 1,
-      "actualCount": 0,
-      "undocumentLines": [
-        2
-      ]
+      "actualCount": 1,
+      "undocumentLines": []
+    },
+    "src/sieve/eratosthenes23.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
     },
     "src/sieve/gothrough.js": {
-      "expectCount": 1,
-      "actualCount": 1,
-      "undocumentLines": []
-    },
-    "src/limits/upperbound.js": {
-      "expectCount": 1,
-      "actualCount": 1,
-      "undocumentLines": []
-    },
-    "src/ulam/atos.js": {
       "expectCount": 1,
       "actualCount": 1,
       "undocumentLines": []
@@ -109,6 +104,11 @@
       "undocumentLines": [
         2
       ]
+    },
+    "src/ulam/atos.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
     },
     "src/ulam/stoa.js": {
       "expectCount": 1,

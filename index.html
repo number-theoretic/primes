@@ -3,16 +3,12 @@
 <head>
   <meta charset="utf-8">
   <base data-ice="baseUrl">
-  <title data-ice="title">aureooms/js-prime API Document</title>
+  <title data-ice="title">Home | @aureooms/js-prime</title>
   <link type="text/css" rel="stylesheet" href="css/style.css">
   <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
   <script src="script/prettify/prettify.js"></script>
-  
-  
   <script src="script/manual.js"></script>
-<script data-ice="userScript" src="user/script/0-header.js"></script>
-<link data-ice="userStyle" rel="stylesheet" href="user/css/0-style.css">
-</head>
+<script src="./inject/script/0-header.js"></script><link rel="stylesheet" href="./inject/css/0-style.css"><meta name="description" content="prime numbers code bricks for JavaScript"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="@aureooms/js-prime"><meta property="twitter:description" content="prime numbers code bricks for JavaScript"></head>
 <body class="layout-container" data-ice="rootContainer">
 
 <header>
@@ -20,8 +16,7 @@
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
   <a href="source.html">Source</a>
-  <a href="test.html" data-ice="testLink">Test</a>
-  <a data-ice="repoURL" href="https://github.com/aureooms/js-prime.git" class="repo-url-github">Repository</a>
+  
   <div class="search-box">
   <span>
     <img src="./image/search.png">
@@ -29,14 +24,14 @@
   </span>
     <ul class="search-result"></ul>
   </div>
-</header>
+<a style="position:relative; top:3px;" href="https://github.com/aureooms/js-prime.git"><img width="20px" src="./image/github.png"></a></header>
 
 <nav class="navigation" data-ice="nav"><div>
   <ul>
     
-  <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">analyze</div><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-__factorize__">__factorize__</a></span></span></li>
-<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">limits</div><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-__upperbound__">__upperbound__</a></span></span></li>
-<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">sieve</div><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-__eratosthenes__">__eratosthenes__</a></span></span></li>
+  <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#analyze">analyze</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-__factorize__">__factorize__</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#limits">limits</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-__upperbound__">__upperbound__</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#sieve">sieve</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-__eratosthenes__">__eratosthenes__</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-__eratosthenes2__">__eratosthenes2__</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-__eratosthenes23__">__eratosthenes23__</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-__gothrough__">__gothrough__</a></span></span></li>
@@ -50,26 +45,30 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-ptoi23">ptoi23</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-ptoi230">ptoi230</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-ptoi231">ptoi231</a></span></span></li>
-<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">ulam</div><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-atos">atos</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#ulam">ulam</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-atos">atos</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-stoa">stoa</a></span></span></li>
 </ul>
 </div>
 </nav>
 
-<div class="content" data-ice="content"><div data-ice="index" class="github-markdown"><h1 id="-js-prime-http-aureooms-github-io-js-prime-"><a href="http://aureooms.github.io/js-prime">js-prime</a></h1>
-<p>Prime numbers algorithms for JavaScript.</p>
-<p><a href="https://raw.githubusercontent.com/aureooms/js-prime/master/LICENSE"><img src="http://img.shields.io/npm/l/aureooms-js-prime.svg?style=flat" alt="NPM license"></a>
-<a href="https://www.npmjs.org/package/aureooms-js-prime"><img src="http://img.shields.io/npm/v/aureooms-js-prime.svg?style=flat" alt="NPM version"></a>
-<a href="https://travis-ci.org/aureooms/js-prime"><img src="http://img.shields.io/travis/aureooms/js-prime.svg?style=flat" alt="Build Status"></a>
-<a href="https://coveralls.io/r/aureooms/js-prime"><img src="http://img.shields.io/coveralls/aureooms/js-prime.svg?style=flat" alt="Coverage Status"></a>
-<a href="https://david-dm.org/aureooms/js-prime#info=dependencies"><img src="http://img.shields.io/david/aureooms/js-prime.svg?style=flat" alt="Dependencies Status"></a>
-<a href="https://david-dm.org/aureooms/js-prime#info=devDependencies"><img src="http://img.shields.io/david/dev/aureooms/js-prime.svg?style=flat" alt="devDependencies Status"></a>
-<a href="https://codeclimate.com/github/aureooms/js-prime"><img src="http://img.shields.io/codeclimate/github/aureooms/js-prime.svg?style=flat" alt="Code Climate"></a>
-<a href="https://www.npmjs.org/package/aureooms-js-prime"><img src="http://img.shields.io/npm/dm/aureooms-js-prime.svg?style=flat" alt="NPM downloads per month"></a>
-<a href="https://github.com/aureooms/js-prime/issues"><img src="http://img.shields.io/github/issues/aureooms/js-prime.svg?style=flat" alt="GitHub issues"></a>
-<a href="https://aureooms.github.io/js-prime/source.html"><img src="https://aureooms.github.io/js-prime/badge.svg" alt="Documentation"></a></p>
-<h2 id="reference">Reference</h2>
-<ul>
+<div class="content" data-ice="content"><div data-ice="index" class="github-markdown"><h1 id="-a-href--https---aureooms-github-io-js-prime---aureooms-js-prime--a-"><a href="https://aureooms.github.io/js-prime">@aureooms/js-prime</a></h1><p><img src="https://imgs.xkcd.com/comics/blownapart_color.jpg" width="864"></p>
+<p>Prime numbers algorithms for JavaScript.
+See <a href="https://aureooms.github.io/js-prime">docs</a>.
+Parent is <a href="https://github.com/aureooms/js-algorithms">@aureooms/js-algorithms</a>.</p>
+<p><a href="https://raw.githubusercontent.com/aureooms/js-prime/master/LICENSE"><img src="https://img.shields.io/github/license/aureooms/js-prime.svg" alt="License"></a>
+<a href="https://www.npmjs.org/package/@aureooms/js-prime"><img src="https://img.shields.io/npm/v/@aureooms/js-prime.svg" alt="Version"></a>
+<a href="https://travis-ci.org/aureooms/js-prime/branches"><img src="https://img.shields.io/travis/aureooms/js-prime/master.svg" alt="Build"></a>
+<a href="https://david-dm.org/aureooms/js-prime"><img src="https://img.shields.io/david/aureooms/js-prime.svg" alt="Dependencies"></a>
+<a href="https://david-dm.org/aureooms/js-prime?type=dev"><img src="https://img.shields.io/david/dev/aureooms/js-prime.svg" alt="Dev dependencies"></a>
+<a href="https://github.com/aureooms/js-prime/issues"><img src="https://img.shields.io/github/issues/aureooms/js-prime.svg" alt="GitHub issues"></a>
+<a href="https://www.npmjs.org/package/@aureooms/js-prime"><img src="https://img.shields.io/npm/dm/@aureooms/js-prime.svg" alt="Downloads"></a></p>
+<p><a href="https://codeclimate.com/github/aureooms/js-prime/issues"><img src="https://img.shields.io/codeclimate/issues/aureooms/js-prime.svg" alt="Code issues"></a>
+<a href="https://codeclimate.com/github/aureooms/js-prime/trends/churn"><img src="https://img.shields.io/codeclimate/maintainability/aureooms/js-prime.svg" alt="Code maintainability"></a>
+<a href="https://codecov.io/gh/aureooms/js-prime"><img src="https://img.shields.io/codecov/c/gh/aureooms/js-prime/master.svg" alt="Code coverage (cov)"></a>
+<a href="https://codeclimate.com/github/aureooms/js-prime/trends/technical_debt"><img src="https://img.shields.io/codeclimate/tech-debt/aureooms/js-prime.svg" alt="Code technical debt"></a>
+<a href="https://aureooms.github.io/js-prime//source.html"><img src="https://aureooms.github.io/js-prime//badge.svg" alt="Documentation"></a>
+<a href="https://bundlephobia.com/result?p=@aureooms/js-prime"><img src="https://img.shields.io/bundlephobia/minzip/@aureooms/js-prime" alt="Package size"></a></p>
+<h2 id="reference">Reference</h2><ul>
 <li><a href="http://cr.yp.to/primegen.html">http://cr.yp.to/primegen.html</a></li>
 <li><a href="https://github.com/jbarham/primegen.go">https://github.com/jbarham/primegen.go</a></li>
 </ul>
@@ -77,7 +76,7 @@
 </div>
 
 <footer class="footer">
-  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(0.4.8)</span></a>
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.1.0)</span><img src="./image/esdoc-logo-mini-black.png"></a>
 </footer>
 
 <script src="script/search_index.js"></script>
