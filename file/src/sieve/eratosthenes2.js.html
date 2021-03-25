@@ -8,7 +8,7 @@
   <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
   <script src="script/prettify/prettify.js"></script>
   <script src="script/manual.js"></script>
-<script src="./inject/script/0-header.js"></script><link rel="stylesheet" href="./inject/css/0-style.css"><meta name="description" content="prime numbers code bricks for JavaScript"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="@aureooms/js-prime"><meta property="twitter:description" content="prime numbers code bricks for JavaScript"></head>
+<link rel="stylesheet" href="./inject/css/0-style.css"><script src="./inject/script/0-header.js"></script><meta name="description" content="prime numbers code bricks for JavaScript"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="@aureooms/js-prime"><meta property="twitter:description" content="prime numbers code bricks for JavaScript"></head>
 <body class="layout-container" data-ice="rootContainer">
 
 <header>
@@ -24,7 +24,7 @@
   </span>
     <ul class="search-result"></ul>
   </div>
-<a style="position:relative; top:3px;" href="https://github.com/aureooms/js-prime.git"><img width="20px" src="./image/github.png"></a></header>
+<a style="position:relative; top:3px;" href="https://github.com/aureooms/js-prime"><img width="20px" src="./image/github.png"></a></header>
 
 <nav class="navigation" data-ice="nav"><div>
   <ul>
@@ -52,55 +52,52 @@
 </nav>
 
 <div class="content" data-ice="content"><h1 data-ice="title">src/sieve/eratosthenes2.js</h1>
-<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import { ptoi2 , itop2 } from &apos;./&apos; ;
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import {ptoi2} from &apos;./ptoi2.js&apos;;
+import {itop2} from &apos;./itop2.js&apos;;
+
 /**
  * Sieve of Eratosthenes skipping all multiples of 2.
  */
 
-export function __eratosthenes2__ ( alloc , fill , get , gothrough , usqrt ) {
+export function __eratosthenes2__(alloc, fill, get, gothrough, usqrt) {
+	const first = 3;
 
-	var first = 3 ;
-
-	var eratosthenes2 = function ( n , callback ) {
-
-		var size , sieve , m , i , p ;
-
-		if ( n &lt;= 2 ) {
-			return null ;
+	const eratosthenes2 = function (n, callback) {
+		if (n &lt;= 2) {
+			return null;
 		}
 
-		callback( 2 ) ;
+		callback(2);
 
-		if ( n &lt;= 3 ) {
-			return null ;
+		if (n &lt;= 3) {
+			return null;
 		}
 
-		size = ptoi2( n ) ;
+		const size = ptoi2(n);
 
-		sieve = alloc( size ) ;
-		fill( sieve , 0 , size , true ) ;
+		const sieve = alloc(size);
+		fill(sieve, 0, size, true);
 
-		m = ptoi2( usqrt( n ) ) ;
+		const m = ptoi2(usqrt(n));
 
-		for ( i = ptoi2( first ) ; i &lt; m ; ++i ) {
-			if ( get( sieve , i ) ) {
-				p = itop2( i ) ;
-				callback( p ) ;
-				gothrough( sieve , ptoi2( p * p ) , size , p ) ;
+		for (let i = ptoi2(first); i &lt; m; ++i) {
+			if (get(sieve, i)) {
+				const p = itop2(i);
+				callback(p);
+				gothrough(sieve, ptoi2(p * p), size, p);
 			}
 		}
 
-		for ( i = m ; i &lt; size ; ++i ) {
-			if ( get( sieve , i ) ) {
-				callback( itop2( i ) ) ;
+		for (let i = m; i &lt; size; ++i) {
+			if (get(sieve, i)) {
+				callback(itop2(i));
 			}
 		}
 
-		return sieve ;
-	} ;
+		return sieve;
+	};
 
-	return eratosthenes2 ;
-
+	return eratosthenes2;
 }
 </code></pre>
 

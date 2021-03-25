@@ -1,7 +1,7 @@
 {
   "type": "File",
   "start": 0,
-  "end": 30,
+  "end": 32,
   "loc": {
     "start": {
       "line": 1,
@@ -15,7 +15,7 @@
   "program": {
     "type": "Program",
     "start": 0,
-    "end": 30,
+    "end": 32,
     "loc": {
       "start": {
         "line": 1,
@@ -31,7 +31,7 @@
       {
         "type": "ExportAllDeclaration",
         "start": 0,
-        "end": 29,
+        "end": 31,
         "loc": {
           "start": {
             "line": 1,
@@ -39,13 +39,13 @@
           },
           "end": {
             "line": 1,
-            "column": 29
+            "column": 31
           }
         },
         "source": {
           "type": "StringLiteral",
           "start": 14,
-          "end": 27,
+          "end": 30,
           "loc": {
             "start": {
               "line": 1,
@@ -53,14 +53,14 @@
             },
             "end": {
               "line": 1,
-              "column": 27
+              "column": 30
             }
           },
           "extra": {
-            "rawValue": "./factorize",
-            "raw": "'./factorize'"
+            "rawValue": "./factorize.js",
+            "raw": "'./factorize.js'"
           },
-          "value": "./factorize"
+          "value": "./factorize.js"
         }
       }
     ],
@@ -162,9 +162,9 @@
         "binop": null,
         "updateContext": null
       },
-      "value": "./factorize",
+      "value": "./factorize.js",
       "start": 14,
-      "end": 27,
+      "end": 30,
       "loc": {
         "start": {
           "line": 1,
@@ -172,7 +172,7 @@
         },
         "end": {
           "line": 1,
-          "column": 27
+          "column": 30
         }
       }
     },
@@ -189,16 +189,16 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 28,
-      "end": 29,
+      "start": 30,
+      "end": 31,
       "loc": {
         "start": {
           "line": 1,
-          "column": 28
+          "column": 30
         },
         "end": {
           "line": 1,
-          "column": 29
+          "column": 31
         }
       }
     },
@@ -215,8 +215,8 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 30,
-      "end": 30,
+      "start": 32,
+      "end": 32,
       "loc": {
         "start": {
           "line": 2,

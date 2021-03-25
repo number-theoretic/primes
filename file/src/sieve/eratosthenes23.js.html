@@ -8,7 +8,7 @@
   <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
   <script src="script/prettify/prettify.js"></script>
   <script src="script/manual.js"></script>
-<script src="./inject/script/0-header.js"></script><link rel="stylesheet" href="./inject/css/0-style.css"><meta name="description" content="prime numbers code bricks for JavaScript"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="@aureooms/js-prime"><meta property="twitter:description" content="prime numbers code bricks for JavaScript"></head>
+<link rel="stylesheet" href="./inject/css/0-style.css"><script src="./inject/script/0-header.js"></script><meta name="description" content="prime numbers code bricks for JavaScript"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="@aureooms/js-prime"><meta property="twitter:description" content="prime numbers code bricks for JavaScript"></head>
 <body class="layout-container" data-ice="rootContainer">
 
 <header>
@@ -24,7 +24,7 @@
   </span>
     <ul class="search-result"></ul>
   </div>
-<a style="position:relative; top:3px;" href="https://github.com/aureooms/js-prime.git"><img width="20px" src="./image/github.png"></a></header>
+<a style="position:relative; top:3px;" href="https://github.com/aureooms/js-prime"><img width="20px" src="./image/github.png"></a></header>
 
 <nav class="navigation" data-ice="nav"><div>
   <ul>
@@ -52,7 +52,12 @@
 </nav>
 
 <div class="content" data-ice="content"><h1 data-ice="title">src/sieve/eratosthenes23.js</h1>
-<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import { ptoi23 , ptoi230 , ptoi231 , itop23 , itop230 , itop231 } from &apos;./&apos; ;
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import {ptoi23} from &apos;./ptoi23.js&apos;;
+import {ptoi230} from &apos;./ptoi230.js&apos;;
+import {ptoi231} from &apos;./ptoi231.js&apos;;
+import {itop23} from &apos;./itop23.js&apos;;
+import {itop230} from &apos;./itop230.js&apos;;
+import {itop231} from &apos;./itop231.js&apos;;
 
 /**
  * Sieve of Eratosthenes skipping all multiples of 2 and 3.
@@ -85,112 +90,102 @@
  * i(191) = 62 = 45 + 13 + 4
  */
 
-export function __eratosthenes23__ ( alloc , fill , get , gothrough , usqrt ) {
+export function __eratosthenes23__(alloc, fill, get, gothrough, usqrt) {
+	const first = 5;
 
-	var first = 5 ;
+	const eratosthenes23 = function (n, callback) {
+		let j;
+		let p;
+		let l;
 
-	var eratosthenes23 = function ( n , callback ) {
-
-		var size , sieve , m , i , j , p , l ;
-
-		if ( n &lt;= 2 ) {
-			return null ;
+		if (n &lt;= 2) {
+			return null;
 		}
 
-		callback( 2 ) ;
+		callback(2);
 
-		if ( n &lt;= 3 ) {
-			return null ;
+		if (n &lt;= 3) {
+			return null;
 		}
 
-		callback( 3 ) ;
+		callback(3);
 
-		if ( n &lt;= 5 ) {
-			return null ;
+		if (n &lt;= 5) {
+			return null;
 		}
 
-		size = ptoi23( n ) ;
+		const size = ptoi23(n);
 
-		sieve = alloc( size ) ;
-		fill( sieve , 0 , size , true ) ;
+		const sieve = alloc(size);
+		fill(sieve, 0, size, true);
 
-		m = ptoi23( usqrt( n ) ) ;
-		i = ptoi230( first ) ;
+		const m = ptoi23(usqrt(n));
+		let i = ptoi230(first);
 
-		for ( l = 2 ; ; l += 2 ) {
-
-			if ( i &gt;= m ) {
-				break ;
+		for (l = 2; ; l += 2) {
+			if (i &gt;= m) {
+				break;
 			}
 
-			if ( get( sieve , i ) ) {
+			if (get(sieve, i)) {
+				p = itop230(i);
 
-				p = itop230( i ) ;
+				callback(p);
 
-				callback( p ) ;
+				j = ptoi231(p * p);
 
-				j = ptoi231( p * p ) ;
-
-				gothrough( sieve , j , size , 2 * p ) ;
-				gothrough( sieve , j + p - l , size , 2 * p ) ;
-
+				gothrough(sieve, j, size, 2 * p);
+				gothrough(sieve, j + p - l, size, 2 * p);
 			}
 
-			++i ;
+			++i;
 
-
-			if ( i &gt;= m ) {
-				break ;
+			if (i &gt;= m) {
+				break;
 			}
 
-			if ( get( sieve , i ) ) {
+			if (get(sieve, i)) {
+				p = itop231(i);
 
-				p = itop231( i ) ;
+				callback(p);
 
-				callback( p ) ;
+				j = ptoi231(p * p);
 
-				j = ptoi231( p * p ) ;
-
-				gothrough( sieve , j , size , 2 * p ) ;
-				gothrough( sieve , j + p + l , size , 2 * p ) ;
-
+				gothrough(sieve, j, size, 2 * p);
+				gothrough(sieve, j + p + l, size, 2 * p);
 			}
 
-			++i ;
-
+			++i;
 		}
 
-		i = m ;
+		i = m;
 
-		for ( ; ; ) {
-
-			if ( i &gt;= size ) {
-				break ;
+		for (;;) {
+			if (i &gt;= size) {
+				break;
 			}
 
-			if ( get( sieve , i ) ) {
-				callback( itop23( i ) ) ;
+			if (get(sieve, i)) {
+				callback(itop23(i));
 			}
 
-			++i ;
+			++i;
 
-
-			if ( i &gt;= size ) {
-				break ;
+			if (i &gt;= size) {
+				break;
 			}
 
-			if ( get( sieve , i ) ) {
-				callback( itop23( i ) ) ;
+			if (get(sieve, i)) {
+				callback(itop23(i));
 			}
 
-			++i ;
+			++i;
 		}
 
-		return sieve ;
-	} ;
+		return sieve;
+	};
 
-	return eratosthenes23 ;
-
+	return eratosthenes23;
 }
 </code></pre>
 
