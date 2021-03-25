@@ -2,7 +2,12 @@
 [@aureooms/js-prime](https://aureooms.github.io/js-prime)
 ==
 
-<img src="https://imgs.xkcd.com/comics/blownapart_color.jpg" width="864">
+<p align="center">
+<a href="https://xkcd.com/5">
+<img src="https://imgs.xkcd.com/comics/blownapart_color.jpg" width="600">
+</a><br/>
+© <a href="https://xkcd.com">xkcd.com</a>
+</p>
 
 Prime numbers algorithms for JavaScript.
 See [docs](https://aureooms.github.io/js-prime).
