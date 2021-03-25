@@ -1,4 +1,4 @@
-import { ptoi2 , itop2 } from './' ;
+import { ptoi2 , itop2 } from "./index.js" ;
 /**
  * Sieve of Eratosthenes skipping all multiples of 2.
  */

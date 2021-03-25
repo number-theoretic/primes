@@ -1,4 +1,4 @@
-export * from './analyze' ;
-export * from './limits' ;
-export * from './sieve' ;
-export * from './ulam' ;
+export * from "./analyze/index.js" ;
+export * from "./limits/index.js" ;
+export * from "./sieve/index.js" ;
+export * from "./ulam/index.js" ;

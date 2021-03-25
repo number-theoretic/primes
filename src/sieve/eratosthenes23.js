@@ -1,4 +1,4 @@
-import { ptoi23 , ptoi230 , ptoi231 , itop23 , itop230 , itop231 } from './' ;
+import { ptoi23 , ptoi230 , ptoi231 , itop23 , itop230 , itop231 } from "./index.js" ;
 
 /**
  * Sieve of Eratosthenes skipping all multiples of 2 and 3.

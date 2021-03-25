@@ -2,7 +2,7 @@ import test from 'ava' ;
 
 import { $2, iadd1, eq0, gt1, divmod } from "@aureooms/js-number" ;
 
-import * as prime from '../../../src' ;
+import * as prime from "../../../src/index.js" ;
 
 const factorize = prime . __factorize__ ( $2, iadd1, eq0, gt1, divmod ) ;
 

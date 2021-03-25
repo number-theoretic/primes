@@ -7,7 +7,7 @@ import * as itertools from "@aureooms/js-itertools" ;
 
 const data = require( "../../data/1000.json" ) ;
 
-import * as prime from '../../../src' ;
+import * as prime from "../../../src/index.js" ;
 
 const gothrough = prime.__gothrough__( set ) ;
 

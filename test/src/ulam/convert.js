@@ -34,7 +34,7 @@
 *
 */
 import test from 'ava' ;
-import { atos , stoa } from '../../../src' ;
+import { atos , stoa } from "../../../src/index.js" ;
 
 test( "ulam convert" , t => {
 
