@@ -28,7 +28,7 @@ Parent is [@aureooms/js-algorithms](https://github.com/aureooms/js-algorithms).
 [![Documentation](https://aureooms.github.io/js-prime/badge.svg)](https://aureooms.github.io/js-prime/source.html)
 [![Package size](https://img.shields.io/bundlephobia/minzip/@aureooms/js-prime)](https://bundlephobia.com/result?p=@aureooms/js-prime)
 
-## Reference
+## :link: Links
 
  - http://cr.yp.to/primegen.html
  - https://github.com/jbarham/primegen.go
