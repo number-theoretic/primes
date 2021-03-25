@@ -1,2 +1,2 @@
-export * from "./atos.js" ;
-export * from "./stoa.js" ;
+export * from './atos.js';
+export * from './stoa.js';

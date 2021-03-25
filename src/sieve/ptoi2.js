@@ -1,4 +1,3 @@
-
-export function ptoi2 (p) {
-	return p / 2 | 0;
+export function ptoi2(p) {
+	return (p / 2) | 0;
 }

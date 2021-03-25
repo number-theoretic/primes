@@ -1,4 +1,3 @@
-
-export function itop ( i ) {
-	return i ;
+export function itop(i) {
+	return i;
 }

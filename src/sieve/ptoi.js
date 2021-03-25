@@ -1,4 +1,3 @@
-
-export function ptoi ( p ) {
-	return p ;
+export function ptoi(p) {
+	return p;
 }

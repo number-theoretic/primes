@@ -1,1 +1,1 @@
-export * from "./upperbound.js" ;
+export * from './upperbound.js';

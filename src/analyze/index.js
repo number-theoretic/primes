@@ -1,1 +1,1 @@
-export * from "./factorize.js" ;
+export * from './factorize.js';

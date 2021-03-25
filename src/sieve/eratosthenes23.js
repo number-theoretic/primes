@@ -1,4 +1,4 @@
-import { ptoi23 , ptoi230 , ptoi231 , itop23 , itop230 , itop231 } from "./index.js" ;
+import {ptoi23, ptoi230, ptoi231, itop23, itop230, itop231} from './index.js';
 
 /**
  * Sieve of Eratosthenes skipping all multiples of 2 and 3.
@@ -31,110 +31,100 @@ import { ptoi23 , ptoi230 , ptoi231 , itop23 , itop230 , itop231 } from "./index
  * i(191) = 62 = 45 + 13 + 4
  */
 
-export function __eratosthenes23__ ( alloc , fill , get , gothrough , usqrt ) {
+export function __eratosthenes23__(alloc, fill, get, gothrough, usqrt) {
+	const first = 5;
 
-	var first = 5 ;
+	const eratosthenes23 = function (n, callback) {
+		let j;
+		let p;
+		let l;
 
-	var eratosthenes23 = function ( n , callback ) {
-
-		var size , sieve , m , i , j , p , l ;
-
-		if ( n <= 2 ) {
-			return null ;
+		if (n <= 2) {
+			return null;
 		}
 
-		callback( 2 ) ;
+		callback(2);
 
-		if ( n <= 3 ) {
-			return null ;
+		if (n <= 3) {
+			return null;
 		}
 
-		callback( 3 ) ;
+		callback(3);
 
-		if ( n <= 5 ) {
-			return null ;
+		if (n <= 5) {
+			return null;
 		}
 
-		size = ptoi23( n ) ;
+		const size = ptoi23(n);
 
-		sieve = alloc( size ) ;
-		fill( sieve , 0 , size , true ) ;
+		const sieve = alloc(size);
+		fill(sieve, 0, size, true);
 
-		m = ptoi23( usqrt( n ) ) ;
-		i = ptoi230( first ) ;
+		const m = ptoi23(usqrt(n));
+		let i = ptoi230(first);
 
-		for ( l = 2 ; ; l += 2 ) {
-
-			if ( i >= m ) {
-				break ;
+		for (l = 2; ; l += 2) {
+			if (i >= m) {
+				break;
 			}
 
-			if ( get( sieve , i ) ) {
+			if (get(sieve, i)) {
+				p = itop230(i);
 
-				p = itop230( i ) ;
+				callback(p);
 
-				callback( p ) ;
+				j = ptoi231(p * p);
 
-				j = ptoi231( p * p ) ;
-
-				gothrough( sieve , j , size , 2 * p ) ;
-				gothrough( sieve , j + p - l , size , 2 * p ) ;
-
+				gothrough(sieve, j, size, 2 * p);
+				gothrough(sieve, j + p - l, size, 2 * p);
 			}
 
-			++i ;
+			++i;
 
-
-			if ( i >= m ) {
-				break ;
+			if (i >= m) {
+				break;
 			}
 
-			if ( get( sieve , i ) ) {
+			if (get(sieve, i)) {
+				p = itop231(i);
 
-				p = itop231( i ) ;
+				callback(p);
 
-				callback( p ) ;
+				j = ptoi231(p * p);
 
-				j = ptoi231( p * p ) ;
-
-				gothrough( sieve , j , size , 2 * p ) ;
-				gothrough( sieve , j + p + l , size , 2 * p ) ;
-
+				gothrough(sieve, j, size, 2 * p);
+				gothrough(sieve, j + p + l, size, 2 * p);
 			}
 
-			++i ;
-
+			++i;
 		}
 
-		i = m ;
+		i = m;
 
-		for ( ; ; ) {
-
-			if ( i >= size ) {
-				break ;
+		for (;;) {
+			if (i >= size) {
+				break;
 			}
 
-			if ( get( sieve , i ) ) {
-				callback( itop23( i ) ) ;
+			if (get(sieve, i)) {
+				callback(itop23(i));
 			}
 
-			++i ;
+			++i;
 
-
-			if ( i >= size ) {
-				break ;
+			if (i >= size) {
+				break;
 			}
 
-			if ( get( sieve , i ) ) {
-				callback( itop23( i ) ) ;
+			if (get(sieve, i)) {
+				callback(itop23(i));
 			}
 
-			++i ;
+			++i;
 		}
 
-		return sieve ;
-	} ;
+		return sieve;
+	};
 
-	return eratosthenes23 ;
-
+	return eratosthenes23;
 }
