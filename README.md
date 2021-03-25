@@ -9,7 +9,7 @@ Parent is [@aureooms/js-algorithms](https://github.com/aureooms/js-algorithms).
 
 [![License](https://img.shields.io/github/license/aureooms/js-prime.svg)](https://raw.githubusercontent.com/aureooms/js-prime/main/LICENSE)
 [![Version](https://img.shields.io/npm/v/@aureooms/js-prime.svg)](https://www.npmjs.org/package/@aureooms/js-prime)
-[![Build](https://img.shields.io/travis/aureooms/js-prime/main.svg)](https://travis-ci.org/aureooms/js-prime/branches)
+[![Build](https://img.shields.io/travis/aureooms/js-prime/main.svg)](https://travis-ci.com/aureooms/js-prime/branches)
 [![Dependencies](https://img.shields.io/david/aureooms/js-prime.svg)](https://david-dm.org/aureooms/js-prime)
 [![Dev dependencies](https://img.shields.io/david/dev/aureooms/js-prime.svg)](https://david-dm.org/aureooms/js-prime?type=dev)
 [![GitHub issues](https://img.shields.io/github/issues/aureooms/js-prime.svg)](https://github.com/aureooms/js-prime/issues)
