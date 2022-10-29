@@ -1,14 +1,22 @@
 # Installation
-Can be managed using
-[jspm](http://jspm.io)
-or [npm](https://github.com/npm/npm).
 
-### jspm
+Can be managed using
+[yarn](https://yarnpkg.com/en/docs),
+[npm](https://docs.npmjs.com),
+or [jspm](https://jspm.org/docs).
+
+
+### yarn
 ```terminal
-jspm install npm:@number-theoretic/primes
+yarn add @number-theoretic/primes
 ```
 
 ### npm
 ```terminal
 npm install @number-theoretic/primes --save
+```
+
+### jspm
+```terminal
+jspm install npm:@number-theoretic/primes
 ```
