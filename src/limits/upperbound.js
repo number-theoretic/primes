@@ -13,7 +13,7 @@ export function __upperbound__(log, loglog) {
 			return n * (log(n) + loglog(n)) + 3;
 		}
 
-		if (n < 39018) {
+		if (n < 39_018) {
 			return n * (log(n) + loglog(n) - 0.5);
 		}
 

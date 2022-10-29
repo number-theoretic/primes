@@ -1,50 +1,54 @@
 import test from 'ava';
 
-import {alloc, fill, get, set} from '@aureooms/js-array';
-import {usqrt32} from '@aureooms/js-uint32';
-import functools from '@aureooms/js-functools';
-import * as itertools from '@aureooms/js-itertools';
+import {alloc} from '@array-like/alloc';
+import {fill} from '@array-like/fill';
+import {get, set} from '@array-like/experimental';
 
-const data = require('../../data/1000.json');
+import {usqrt32} from '@arithmetic-type/uint32';
 
-import * as prime from '../../../src/index.js';
+import {bind} from '@functional-abstraction/functools';
 
-const gothrough = prime.__gothrough__(set);
+import {product} from '@set-theory/cartesian-product';
+
+import {
+	__gothrough__,
+	__eratosthenes__,
+	__eratosthenes2__,
+	__eratosthenes23__,
+} from '../../../src/index.js';
+
+import data from '../../data/1000.json';
+
+const gothrough = __gothrough__(set);
 
 function run([[sievename, sieve], n]) {
 	test(sievename + ' ' + n, (t) => {
 		const primes = [];
 
-		sieve(n, functools.bind(primes.push, primes, []));
+		sieve(n, bind(primes.push, primes, []));
 
 		const len = primes.length;
 
 		t.deepEqual(
 			primes,
 			data.slice(0, len),
-			'set contains the first ' + len + ' prime numbers',
+			`set contains the first ${len} prime numbers`,
 		);
-		t.true(
-			data[len] >= n,
-			'found all primes below ' + n + ', next is ' + data[len],
-		);
+		t.true(data[len] >= n, `found all primes below ${n}, next is ${data[len]}`);
 	});
 }
 
-const inputs = itertools.product(
+const inputs = product(
 	[
 		[
-			[
-				'Eratosthenes',
-				prime.__eratosthenes__(alloc, fill, get, gothrough, usqrt32),
-			],
+			['Eratosthenes', __eratosthenes__(alloc, fill, get, gothrough, usqrt32)],
 			[
 				'Eratosthenes - 2',
-				prime.__eratosthenes2__(alloc, fill, get, gothrough, usqrt32),
+				__eratosthenes2__(alloc, fill, get, gothrough, usqrt32),
 			],
 			[
 				'Eratosthenes - 2 , 3',
-				prime.__eratosthenes23__(alloc, fill, get, gothrough, usqrt32),
+				__eratosthenes23__(alloc, fill, get, gothrough, usqrt32),
 			],
 		],
 		[0, 1, 2, 3, 4, 5, 6, 10, 15, 49, 100, 200, 1000, 7919],

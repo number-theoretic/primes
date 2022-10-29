@@ -70,8 +70,8 @@ test('ulam convert', (t) => {
 
 	const backandforth = function (n) {
 		for (let i = 0; i < n * n; ++i) {
-			t.is(as(i, n), i, 'as( ' + i + ' , 3 )');
-			t.is(sa(i, n), i, 'sa( ' + i + ' , 3 )');
+			t.is(as(i, n), i, `as(${i}, 3)`);
+			t.is(sa(i, n), i, `sa(${i}, 3)`);
 		}
 	};
 
