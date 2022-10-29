@@ -1,15 +1,8 @@
 # Usage
-The code needs a ES2015+ polyfill to work, for example
-[regenerator-runtime/runtime](https://babeljs.io/docs/usage/polyfill).
-```js
-require( 'regenerator-runtime/runtime' ) ;
-// or
-import 'regenerator-runtime/runtime.js' ;
 ```
 
-Then
 ```js
-const measure = require( '@aureooms/js-prime' ) ;
+const primes = require('@number-theoretic/primes');
 // or
-import measure from '@aureooms/js-prime' ;
+import * as primes from '@number-theoretic/primes';
 ```

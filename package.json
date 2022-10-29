@@ -1,16 +1,16 @@
 {
-  "name": "@aureooms/js-prime",
+  "name": "@number-theoretic/primes",
   "description": "prime numbers code bricks for JavaScript",
   "version": "5.0.0",
   "license": "AGPL-3.0",
-  "author": "Aurélien Ooms <aurelien.ooms@gmail.com>",
-  "homepage": "https://make-github-pseudonymous-again.github.io/js-prime",
+  "author": "make-github-pseudonymous-again",
+  "homepage": "https://number-theoretic.github.io/primes",
   "repository": {
     "type": "git",
-    "url": "https://github.com/make-github-pseudonymous-again/js-prime"
+    "url": "https://github.com/number-theoretic/primes"
   },
   "bugs": {
-    "url": "https://github.com/make-github-pseudonymous-again/js-prime/issues"
+    "url": "https://github.com/number-theoretic/primes/issues"
   },
   "keywords": [
     "bricks",

@@ -5,10 +5,10 @@ or [npm](https://github.com/npm/npm).
 
 ### jspm
 ```terminal
-jspm install npm:@aureooms/js-prime
+jspm install npm:@number-theoretic/primes
 ```
 
 ### npm
 ```terminal
-npm install @aureooms/js-prime --save
+npm install @number-theoretic/primes --save
 ```
