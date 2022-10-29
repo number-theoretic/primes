@@ -16,8 +16,7 @@ Parent is [js-algorithms](https://github.com/make-github-pseudonymous-again/js-a
 [![License](https://img.shields.io/github/license/number-theoretic/primes.svg)](https://raw.githubusercontent.com/number-theoretic/primes/main/LICENSE)
 [![Version](https://img.shields.io/npm/v/@number-theoretic/primes.svg)](https://www.npmjs.org/package/@number-theoretic/primes)
 [![Build](https://img.shields.io/travis/number-theoretic/primes/main.svg)](https://travis-ci.com/number-theoretic/primes/branches)
-[![Dependencies](https://img.shields.io/david/number-theoretic/primes.svg)](https://david-dm.org/number-theoretic/primes)
-[![Dev dependencies](https://img.shields.io/david/dev/number-theoretic/primes.svg)](https://david-dm.org/number-theoretic/primes?type=dev)
+[![Dependencies](https://img.shields.io/librariesio/github/number-theoretic/primes.svg)](https://github.com/number-theoretic/primes/network/dependencies)
 [![GitHub issues](https://img.shields.io/github/issues/number-theoretic/primes.svg)](https://github.com/number-theoretic/primes/issues)
 [![Downloads](https://img.shields.io/npm/dm/@number-theoretic/primes.svg)](https://www.npmjs.org/package/@number-theoretic/primes)
 
