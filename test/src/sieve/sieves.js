@@ -10,14 +10,13 @@ import {bind} from '@functional-abstraction/functools';
 
 import {product} from '@set-theory/cartesian-product';
 
+import data from '../../data/1000.json';
 import {
 	__gothrough__,
 	__eratosthenes__,
 	__eratosthenes2__,
 	__eratosthenes23__,
 } from '#module';
-
-import data from '../../data/1000.json';
 
 const gothrough = __gothrough__(set);
 
