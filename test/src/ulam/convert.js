@@ -33,7 +33,7 @@
  *
  */
 import test from 'ava';
-import {atos, stoa} from '../../../src/index.js';
+import {atos, stoa} from '#module';
 
 test('ulam convert', (t) => {
 	t.is(atos(0, 1), 0 * 1 + 0, '1 should be the only element ( n = 1 )');

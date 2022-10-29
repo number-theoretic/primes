@@ -2,7 +2,7 @@ import test from 'ava';
 
 import {loge, logloge} from '@arithmetic-type/double';
 
-import {__upperbound__} from '../../../src/index.js';
+import {__upperbound__} from '#module';
 
 test('limits', (t) => {
 	const upperbound = __upperbound__(loge, logloge);

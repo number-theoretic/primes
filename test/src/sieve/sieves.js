@@ -15,7 +15,7 @@ import {
 	__eratosthenes__,
 	__eratosthenes2__,
 	__eratosthenes23__,
-} from '../../../src/index.js';
+} from '#module';
 
 import data from '../../data/1000.json';
 
