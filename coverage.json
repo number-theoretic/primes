@@ -1,20 +1,8 @@
 {
-  "coverage": "38.88%",
-  "expectCount": 18,
-  "actualCount": 7,
+  "coverage": "37.5%",
+  "expectCount": 16,
+  "actualCount": 6,
   "files": {
-    "src/analyze/factorize.js": {
-      "expectCount": 1,
-      "actualCount": 0,
-      "undocumentLines": [
-        1
-      ]
-    },
-    "src/limits/upperbound.js": {
-      "expectCount": 1,
-      "actualCount": 1,
-      "undocumentLines": []
-    },
     "src/sieve/eratosthenes.js": {
       "expectCount": 1,
       "actualCount": 1,

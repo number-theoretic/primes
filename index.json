@@ -566,160 +566,38 @@
   {
     "__docId__": 48,
     "kind": "file",
-    "name": "src/analyze/factorize.js",
-    "content": "export function __factorize__(two, iadd1, jz, gt1, divmod) {\n\treturn function* (n) {\n\t\tlet divisor = two();\n\n\t\twhile (gt1(n)) {\n\t\t\tconst [q, r] = divmod(n, divisor);\n\n\t\t\tif (jz(r)) {\n\t\t\t\tyield divisor;\n\n\t\t\t\tn = q;\n\t\t\t} else {\n\t\t\t\tdivisor = iadd1(divisor);\n\t\t\t}\n\t\t}\n\t};\n}\n",
+    "name": "src/index.js",
+    "content": "export * from './limits/index.js';\nexport * from './sieve/index.js';\nexport * from './ulam/index.js';\n",
     "static": true,
-    "longname": "/home/runner/work/js-prime/js-prime/src/analyze/factorize.js",
+    "longname": "/home/runner/work/primes/primes/src/index.js",
     "access": "public",
     "description": null,
     "lineNumber": 1
   },
   {
     "__docId__": 49,
-    "kind": "function",
-    "name": "__factorize__",
-    "memberof": "src/analyze/factorize.js",
-    "generator": false,
-    "async": false,
+    "kind": "file",
+    "name": "src/limits/index.js",
+    "content": "export * from './upperbound.js';\n",
     "static": true,
-    "longname": "src/analyze/factorize.js~__factorize__",
-    "access": "private",
-    "export": true,
-    "importPath": "@aureooms/js-prime/src/analyze/factorize.js",
-    "importStyle": "{__factorize__}",
+    "longname": "/home/runner/work/primes/primes/src/limits/index.js",
+    "access": "public",
     "description": null,
-    "lineNumber": 1,
-    "undocument": true,
-    "params": [
-      {
-        "name": "two",
-        "types": [
-          "*"
-        ]
-      },
-      {
-        "name": "iadd1",
-        "types": [
-          "*"
-        ]
-      },
-      {
-        "name": "jz",
-        "types": [
-          "*"
-        ]
-      },
-      {
-        "name": "gt1",
-        "types": [
-          "*"
-        ]
-      },
-      {
-        "name": "divmod",
-        "types": [
-          "*"
-        ]
-      }
-    ],
-    "return": {
-      "types": [
-        "*"
-      ]
-    }
+    "lineNumber": 1
   },
   {
     "__docId__": 50,
     "kind": "file",
-    "name": "src/analyze/index.js",
-    "content": "export * from './factorize.js';\n",
+    "name": "src/sieve/eratosthenes.js",
+    "content": "import {ptoi} from './ptoi.js';\nimport {itop} from './itop.js';\n\n/**\n * Sieve of Eratosthenes.\n */\n\nexport function __eratosthenes__(alloc, fill, get, gothrough, usqrt) {\n\tconst first = 2;\n\n\tconst eratosthenes = function (n, callback) {\n\t\tif (n <= 2) {\n\t\t\treturn null;\n\t\t}\n\n\t\tconst size = ptoi(n);\n\n\t\tconst sieve = alloc(size);\n\t\tfill(sieve, 0, size, true);\n\n\t\tconst m = ptoi(usqrt(n));\n\n\t\tfor (let i = ptoi(first); i < m; ++i) {\n\t\t\tif (get(sieve, i)) {\n\t\t\t\tconst p = itop(i);\n\t\t\t\tcallback(p);\n\t\t\t\tgothrough(sieve, ptoi(p * p), size, p);\n\t\t\t}\n\t\t}\n\n\t\tfor (let i = m; i < size; ++i) {\n\t\t\tif (get(sieve, i)) {\n\t\t\t\tcallback(itop(i));\n\t\t\t}\n\t\t}\n\n\t\treturn sieve;\n\t};\n\n\treturn eratosthenes;\n}\n",
     "static": true,
-    "longname": "/home/runner/work/js-prime/js-prime/src/analyze/index.js",
+    "longname": "/home/runner/work/primes/primes/src/sieve/eratosthenes.js",
     "access": "public",
     "description": null,
     "lineNumber": 1
   },
   {
     "__docId__": 51,
-    "kind": "file",
-    "name": "src/index.js",
-    "content": "export * from './analyze/index.js';\nexport * from './limits/index.js';\nexport * from './sieve/index.js';\nexport * from './ulam/index.js';\n",
-    "static": true,
-    "longname": "/home/runner/work/js-prime/js-prime/src/index.js",
-    "access": "public",
-    "description": null,
-    "lineNumber": 1
-  },
-  {
-    "__docId__": 52,
-    "kind": "file",
-    "name": "src/limits/index.js",
-    "content": "export * from './upperbound.js';\n",
-    "static": true,
-    "longname": "/home/runner/work/js-prime/js-prime/src/limits/index.js",
-    "access": "public",
-    "description": null,
-    "lineNumber": 1
-  },
-  {
-    "__docId__": 53,
-    "kind": "file",
-    "name": "src/limits/upperbound.js",
-    "content": "/**\n * Upper bound for computing the nth prime number.\n *\n * see http://math.univ-lille1.fr/~ramare/TME-EMT/Articles/Art01.html\n *\n * /!\\ n = 1 will work only if loglog(0) returns 0\n *\n */\n\nexport function __upperbound__(log, loglog) {\n\tconst upperbound = function (n) {\n\t\tif (n < 55) {\n\t\t\treturn n * (log(n) + loglog(n)) + 3;\n\t\t}\n\n\t\tif (n < 39018) {\n\t\t\treturn n * (log(n) + loglog(n) - 0.5);\n\t\t}\n\n\t\treturn n * (log(n) + loglog(n) - 0.9484);\n\t};\n\n\treturn upperbound;\n}\n",
-    "static": true,
-    "longname": "/home/runner/work/js-prime/js-prime/src/limits/upperbound.js",
-    "access": "public",
-    "description": null,
-    "lineNumber": 1
-  },
-  {
-    "__docId__": 54,
-    "kind": "function",
-    "name": "__upperbound__",
-    "memberof": "src/limits/upperbound.js",
-    "generator": false,
-    "async": false,
-    "static": true,
-    "longname": "src/limits/upperbound.js~__upperbound__",
-    "access": "private",
-    "export": true,
-    "importPath": "@aureooms/js-prime/src/limits/upperbound.js",
-    "importStyle": "{__upperbound__}",
-    "description": "Upper bound for computing the nth prime number.\n\nsee http://math.univ-lille1.fr/~ramare/TME-EMT/Articles/Art01.html\n\n/!\\ n = 1 will work only if loglog(0) returns 0",
-    "lineNumber": 10,
-    "params": [
-      {
-        "name": "log",
-        "types": [
-          "*"
-        ]
-      },
-      {
-        "name": "loglog",
-        "types": [
-          "*"
-        ]
-      }
-    ],
-    "return": {
-      "types": [
-        "*"
-      ]
-    }
-  },
-  {
-    "__docId__": 55,
-    "kind": "file",
-    "name": "src/sieve/eratosthenes.js",
-    "content": "import {ptoi} from './ptoi.js';\nimport {itop} from './itop.js';\n\n/**\n * Sieve of Eratosthenes.\n */\n\nexport function __eratosthenes__(alloc, fill, get, gothrough, usqrt) {\n\tconst first = 2;\n\n\tconst eratosthenes = function (n, callback) {\n\t\tif (n <= 2) {\n\t\t\treturn null;\n\t\t}\n\n\t\tconst size = ptoi(n);\n\n\t\tconst sieve = alloc(size);\n\t\tfill(sieve, 0, size, true);\n\n\t\tconst m = ptoi(usqrt(n));\n\n\t\tfor (let i = ptoi(first); i < m; ++i) {\n\t\t\tif (get(sieve, i)) {\n\t\t\t\tconst p = itop(i);\n\t\t\t\tcallback(p);\n\t\t\t\tgothrough(sieve, ptoi(p * p), size, p);\n\t\t\t}\n\t\t}\n\n\t\tfor (let i = m; i < size; ++i) {\n\t\t\tif (get(sieve, i)) {\n\t\t\t\tcallback(itop(i));\n\t\t\t}\n\t\t}\n\n\t\treturn sieve;\n\t};\n\n\treturn eratosthenes;\n}\n",
-    "static": true,
-    "longname": "/home/runner/work/js-prime/js-prime/src/sieve/eratosthenes.js",
-    "access": "public",
-    "description": null,
-    "lineNumber": 1
-  },
-  {
-    "__docId__": 56,
     "kind": "function",
     "name": "__eratosthenes__",
     "memberof": "src/sieve/eratosthenes.js",
@@ -729,7 +607,7 @@
     "longname": "src/sieve/eratosthenes.js~__eratosthenes__",
     "access": "private",
     "export": true,
-    "importPath": "@aureooms/js-prime/src/sieve/eratosthenes.js",
+    "importPath": "@number-theoretic/primes/src/sieve/eratosthenes.js",
     "importStyle": "{__eratosthenes__}",
     "description": "Sieve of Eratosthenes.",
     "lineNumber": 8,
@@ -772,18 +650,18 @@
     }
   },
   {
-    "__docId__": 57,
+    "__docId__": 52,
     "kind": "file",
     "name": "src/sieve/eratosthenes2.js",
     "content": "import {ptoi2} from './ptoi2.js';\nimport {itop2} from './itop2.js';\n\n/**\n * Sieve of Eratosthenes skipping all multiples of 2.\n */\n\nexport function __eratosthenes2__(alloc, fill, get, gothrough, usqrt) {\n\tconst first = 3;\n\n\tconst eratosthenes2 = function (n, callback) {\n\t\tif (n <= 2) {\n\t\t\treturn null;\n\t\t}\n\n\t\tcallback(2);\n\n\t\tif (n <= 3) {\n\t\t\treturn null;\n\t\t}\n\n\t\tconst size = ptoi2(n);\n\n\t\tconst sieve = alloc(size);\n\t\tfill(sieve, 0, size, true);\n\n\t\tconst m = ptoi2(usqrt(n));\n\n\t\tfor (let i = ptoi2(first); i < m; ++i) {\n\t\t\tif (get(sieve, i)) {\n\t\t\t\tconst p = itop2(i);\n\t\t\t\tcallback(p);\n\t\t\t\tgothrough(sieve, ptoi2(p * p), size, p);\n\t\t\t}\n\t\t}\n\n\t\tfor (let i = m; i < size; ++i) {\n\t\t\tif (get(sieve, i)) {\n\t\t\t\tcallback(itop2(i));\n\t\t\t}\n\t\t}\n\n\t\treturn sieve;\n\t};\n\n\treturn eratosthenes2;\n}\n",
     "static": true,
-    "longname": "/home/runner/work/js-prime/js-prime/src/sieve/eratosthenes2.js",
+    "longname": "/home/runner/work/primes/primes/src/sieve/eratosthenes2.js",
     "access": "public",
     "description": null,
     "lineNumber": 1
   },
   {
-    "__docId__": 58,
+    "__docId__": 53,
     "kind": "function",
     "name": "__eratosthenes2__",
     "memberof": "src/sieve/eratosthenes2.js",
@@ -793,7 +671,7 @@
     "longname": "src/sieve/eratosthenes2.js~__eratosthenes2__",
     "access": "private",
     "export": true,
-    "importPath": "@aureooms/js-prime/src/sieve/eratosthenes2.js",
+    "importPath": "@number-theoretic/primes/src/sieve/eratosthenes2.js",
     "importStyle": "{__eratosthenes2__}",
     "description": "Sieve of Eratosthenes skipping all multiples of 2.",
     "lineNumber": 8,
@@ -836,18 +714,18 @@
     }
   },
   {
-    "__docId__": 59,
+    "__docId__": 54,
     "kind": "file",
     "name": "src/sieve/eratosthenes23.js",
     "content": "import {ptoi23} from './ptoi23.js';\nimport {ptoi230} from './ptoi230.js';\nimport {ptoi231} from './ptoi231.js';\nimport {itop23} from './itop23.js';\nimport {itop230} from './itop230.js';\nimport {itop231} from './itop231.js';\n\n/**\n * Sieve of Eratosthenes skipping all multiples of 2 and 3.\n *\n * 5 7 11 13 17 19 23 25 29 31 35 37 41 43 47 49 53 55 59 61 65 67 71 73 77 79\n * 0 1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25\n *\n * 83 85 89 91 95 97 101 103 107 109 113 115 119 121 125 127 131 133 137 139\n * 26 27 28 29 30 31  32  33  34  35  36  37  38  39  40  41  42  43  44  45\n *\n * 143 145 149 151 155 157 161 163 167 169 173 175 179 181 185 187 191\n *  46  47  48  49  50  51  52  53  54  55  56  57  58  59  60  61  62\n *\n *\n *\n * i( 5) = 0\n * i(25) = 7\n * i(35) = 10 = 7 + 5 - 2\n *\n * i( 7) = 1\n * i(49) = 15\n * i(77) = 24 = 15 + 7 + 2\n *\n * i( 11) = 2\n * i(121) = 39\n * i(143) = 46 = 39 + 11 - 4\n *\n * i( 13) = 3\n * i(139) = 45\n * i(191) = 62 = 45 + 13 + 4\n */\n\nexport function __eratosthenes23__(alloc, fill, get, gothrough, usqrt) {\n\tconst first = 5;\n\n\tconst eratosthenes23 = function (n, callback) {\n\t\tlet j;\n\t\tlet p;\n\t\tlet l;\n\n\t\tif (n <= 2) {\n\t\t\treturn null;\n\t\t}\n\n\t\tcallback(2);\n\n\t\tif (n <= 3) {\n\t\t\treturn null;\n\t\t}\n\n\t\tcallback(3);\n\n\t\tif (n <= 5) {\n\t\t\treturn null;\n\t\t}\n\n\t\tconst size = ptoi23(n);\n\n\t\tconst sieve = alloc(size);\n\t\tfill(sieve, 0, size, true);\n\n\t\tconst m = ptoi23(usqrt(n));\n\t\tlet i = ptoi230(first);\n\n\t\tfor (l = 2; ; l += 2) {\n\t\t\tif (i >= m) {\n\t\t\t\tbreak;\n\t\t\t}\n\n\t\t\tif (get(sieve, i)) {\n\t\t\t\tp = itop230(i);\n\n\t\t\t\tcallback(p);\n\n\t\t\t\tj = ptoi231(p * p);\n\n\t\t\t\tgothrough(sieve, j, size, 2 * p);\n\t\t\t\tgothrough(sieve, j + p - l, size, 2 * p);\n\t\t\t}\n\n\t\t\t++i;\n\n\t\t\tif (i >= m) {\n\t\t\t\tbreak;\n\t\t\t}\n\n\t\t\tif (get(sieve, i)) {\n\t\t\t\tp = itop231(i);\n\n\t\t\t\tcallback(p);\n\n\t\t\t\tj = ptoi231(p * p);\n\n\t\t\t\tgothrough(sieve, j, size, 2 * p);\n\t\t\t\tgothrough(sieve, j + p + l, size, 2 * p);\n\t\t\t}\n\n\t\t\t++i;\n\t\t}\n\n\t\ti = m;\n\n\t\tfor (;;) {\n\t\t\tif (i >= size) {\n\t\t\t\tbreak;\n\t\t\t}\n\n\t\t\tif (get(sieve, i)) {\n\t\t\t\tcallback(itop23(i));\n\t\t\t}\n\n\t\t\t++i;\n\n\t\t\tif (i >= size) {\n\t\t\t\tbreak;\n\t\t\t}\n\n\t\t\tif (get(sieve, i)) {\n\t\t\t\tcallback(itop23(i));\n\t\t\t}\n\n\t\t\t++i;\n\t\t}\n\n\t\treturn sieve;\n\t};\n\n\treturn eratosthenes23;\n}\n",
     "static": true,
-    "longname": "/home/runner/work/js-prime/js-prime/src/sieve/eratosthenes23.js",
+    "longname": "/home/runner/work/primes/primes/src/sieve/eratosthenes23.js",
     "access": "public",
     "description": null,
     "lineNumber": 1
   },
   {
-    "__docId__": 60,
+    "__docId__": 55,
     "kind": "function",
     "name": "__eratosthenes23__",
     "memberof": "src/sieve/eratosthenes23.js",
@@ -857,7 +735,7 @@
     "longname": "src/sieve/eratosthenes23.js~__eratosthenes23__",
     "access": "private",
     "export": true,
-    "importPath": "@aureooms/js-prime/src/sieve/eratosthenes23.js",
+    "importPath": "@number-theoretic/primes/src/sieve/eratosthenes23.js",
     "importStyle": "{__eratosthenes23__}",
     "description": "Sieve of Eratosthenes skipping all multiples of 2 and 3.\n\n5 7 11 13 17 19 23 25 29 31 35 37 41 43 47 49 53 55 59 61 65 67 71 73 77 79\n0 1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25\n\n83 85 89 91 95 97 101 103 107 109 113 115 119 121 125 127 131 133 137 139\n26 27 28 29 30 31  32  33  34  35  36  37  38  39  40  41  42  43  44  45\n\n143 145 149 151 155 157 161 163 167 169 173 175 179 181 185 187 191\n 46  47  48  49  50  51  52  53  54  55  56  57  58  59  60  61  62\n\n\n\ni( 5) = 0\ni(25) = 7\ni(35) = 10 = 7 + 5 - 2\n\ni( 7) = 1\ni(49) = 15\ni(77) = 24 = 15 + 7 + 2\n\ni( 11) = 2\ni(121) = 39\ni(143) = 46 = 39 + 11 - 4\n\ni( 13) = 3\ni(139) = 45\ni(191) = 62 = 45 + 13 + 4",
     "lineNumber": 39,
@@ -900,18 +778,18 @@
     }
   },
   {
-    "__docId__": 61,
+    "__docId__": 56,
     "kind": "file",
     "name": "src/sieve/gothrough.js",
     "content": "/**\n * Goes through an array and crosses out non prime numbers.\n *\n * @param  {setter} set function ( a , i , v ) that sets value v at index i in array a\n */\nexport function __gothrough__(set) {\n\tconst gothrough = function (prime, i, j, k) {\n\t\tfor (; i < j; i += k) {\n\t\t\tset(prime, i, false);\n\t\t}\n\t};\n\n\treturn gothrough;\n}\n",
     "static": true,
-    "longname": "/home/runner/work/js-prime/js-prime/src/sieve/gothrough.js",
+    "longname": "/home/runner/work/primes/primes/src/sieve/gothrough.js",
     "access": "public",
     "description": null,
     "lineNumber": 1
   },
   {
-    "__docId__": 62,
+    "__docId__": 57,
     "kind": "function",
     "name": "__gothrough__",
     "memberof": "src/sieve/gothrough.js",
@@ -921,7 +799,7 @@
     "longname": "src/sieve/gothrough.js~__gothrough__",
     "access": "private",
     "export": true,
-    "importPath": "@aureooms/js-prime/src/sieve/gothrough.js",
+    "importPath": "@number-theoretic/primes/src/sieve/gothrough.js",
     "importStyle": "{__gothrough__}",
     "description": "Goes through an array and crosses out non prime numbers.",
     "lineNumber": 6,
@@ -944,29 +822,29 @@
     }
   },
   {
-    "__docId__": 63,
+    "__docId__": 58,
     "kind": "file",
     "name": "src/sieve/index.js",
     "content": "export * from './eratosthenes.js';\nexport * from './eratosthenes2.js';\nexport * from './eratosthenes23.js';\nexport * from './gothrough.js';\nexport * from './itop.js';\nexport * from './itop2.js';\nexport * from './itop23.js';\nexport * from './itop230.js';\nexport * from './itop231.js';\nexport * from './ptoi.js';\nexport * from './ptoi2.js';\nexport * from './ptoi23.js';\nexport * from './ptoi230.js';\nexport * from './ptoi231.js';\n",
     "static": true,
-    "longname": "/home/runner/work/js-prime/js-prime/src/sieve/index.js",
+    "longname": "/home/runner/work/primes/primes/src/sieve/index.js",
     "access": "public",
     "description": null,
     "lineNumber": 1
   },
   {
-    "__docId__": 64,
+    "__docId__": 59,
     "kind": "file",
     "name": "src/sieve/itop.js",
     "content": "export function itop(i) {\n\treturn i;\n}\n",
     "static": true,
-    "longname": "/home/runner/work/js-prime/js-prime/src/sieve/itop.js",
+    "longname": "/home/runner/work/primes/primes/src/sieve/itop.js",
     "access": "public",
     "description": null,
     "lineNumber": 1
   },
   {
-    "__docId__": 65,
+    "__docId__": 60,
     "kind": "function",
     "name": "itop",
     "memberof": "src/sieve/itop.js",
@@ -976,7 +854,7 @@
     "longname": "src/sieve/itop.js~itop",
     "access": "public",
     "export": true,
-    "importPath": "@aureooms/js-prime/src/sieve/itop.js",
+    "importPath": "@number-theoretic/primes/src/sieve/itop.js",
     "importStyle": "{itop}",
     "description": null,
     "lineNumber": 1,
@@ -996,18 +874,18 @@
     }
   },
   {
-    "__docId__": 66,
+    "__docId__": 61,
     "kind": "file",
     "name": "src/sieve/itop2.js",
     "content": "export function itop2(i) {\n\treturn i * 2 + 1;\n}\n",
     "static": true,
-    "longname": "/home/runner/work/js-prime/js-prime/src/sieve/itop2.js",
+    "longname": "/home/runner/work/primes/primes/src/sieve/itop2.js",
     "access": "public",
     "description": null,
     "lineNumber": 1
   },
   {
-    "__docId__": 67,
+    "__docId__": 62,
     "kind": "function",
     "name": "itop2",
     "memberof": "src/sieve/itop2.js",
@@ -1017,7 +895,7 @@
     "longname": "src/sieve/itop2.js~itop2",
     "access": "public",
     "export": true,
-    "importPath": "@aureooms/js-prime/src/sieve/itop2.js",
+    "importPath": "@number-theoretic/primes/src/sieve/itop2.js",
     "importStyle": "{itop2}",
     "description": null,
     "lineNumber": 1,
@@ -1037,18 +915,18 @@
     }
   },
   {
-    "__docId__": 68,
+    "__docId__": 63,
     "kind": "file",
     "name": "src/sieve/itop23.js",
     "content": "import {itop230} from './itop230.js';\nimport {itop231} from './itop231.js';\n\nexport function itop23(i) {\n\treturn i % 2 === 0 ? itop230(i) : itop231(i);\n}\n",
     "static": true,
-    "longname": "/home/runner/work/js-prime/js-prime/src/sieve/itop23.js",
+    "longname": "/home/runner/work/primes/primes/src/sieve/itop23.js",
     "access": "public",
     "description": null,
     "lineNumber": 1
   },
   {
-    "__docId__": 69,
+    "__docId__": 64,
     "kind": "function",
     "name": "itop23",
     "memberof": "src/sieve/itop23.js",
@@ -1058,7 +936,7 @@
     "longname": "src/sieve/itop23.js~itop23",
     "access": "public",
     "export": true,
-    "importPath": "@aureooms/js-prime/src/sieve/itop23.js",
+    "importPath": "@number-theoretic/primes/src/sieve/itop23.js",
     "importStyle": "{itop23}",
     "description": null,
     "lineNumber": 4,
@@ -1078,18 +956,18 @@
     }
   },
   {
-    "__docId__": 70,
+    "__docId__": 65,
     "kind": "file",
     "name": "src/sieve/itop230.js",
     "content": "export function itop230(i) {\n\treturn 6 * (((i / 2) | 0) + 1) - 1;\n}\n",
     "static": true,
-    "longname": "/home/runner/work/js-prime/js-prime/src/sieve/itop230.js",
+    "longname": "/home/runner/work/primes/primes/src/sieve/itop230.js",
     "access": "public",
     "description": null,
     "lineNumber": 1
   },
   {
-    "__docId__": 71,
+    "__docId__": 66,
     "kind": "function",
     "name": "itop230",
     "memberof": "src/sieve/itop230.js",
@@ -1099,7 +977,7 @@
     "longname": "src/sieve/itop230.js~itop230",
     "access": "public",
     "export": true,
-    "importPath": "@aureooms/js-prime/src/sieve/itop230.js",
+    "importPath": "@number-theoretic/primes/src/sieve/itop230.js",
     "importStyle": "{itop230}",
     "description": null,
     "lineNumber": 1,
@@ -1119,18 +997,18 @@
     }
   },
   {
-    "__docId__": 72,
+    "__docId__": 67,
     "kind": "file",
     "name": "src/sieve/itop231.js",
     "content": "export function itop231(i) {\n\treturn 6 * (((i / 2) | 0) + 1) + 1;\n}\n",
     "static": true,
-    "longname": "/home/runner/work/js-prime/js-prime/src/sieve/itop231.js",
+    "longname": "/home/runner/work/primes/primes/src/sieve/itop231.js",
     "access": "public",
     "description": null,
     "lineNumber": 1
   },
   {
-    "__docId__": 73,
+    "__docId__": 68,
     "kind": "function",
     "name": "itop231",
     "memberof": "src/sieve/itop231.js",
@@ -1140,7 +1018,7 @@
     "longname": "src/sieve/itop231.js~itop231",
     "access": "public",
     "export": true,
-    "importPath": "@aureooms/js-prime/src/sieve/itop231.js",
+    "importPath": "@number-theoretic/primes/src/sieve/itop231.js",
     "importStyle": "{itop231}",
     "description": null,
     "lineNumber": 1,
@@ -1160,18 +1038,18 @@
     }
   },
   {
-    "__docId__": 74,
+    "__docId__": 69,
     "kind": "file",
     "name": "src/sieve/ptoi.js",
     "content": "export function ptoi(p) {\n\treturn p;\n}\n",
     "static": true,
-    "longname": "/home/runner/work/js-prime/js-prime/src/sieve/ptoi.js",
+    "longname": "/home/runner/work/primes/primes/src/sieve/ptoi.js",
     "access": "public",
     "description": null,
     "lineNumber": 1
   },
   {
-    "__docId__": 75,
+    "__docId__": 70,
     "kind": "function",
     "name": "ptoi",
     "memberof": "src/sieve/ptoi.js",
@@ -1181,7 +1059,7 @@
     "longname": "src/sieve/ptoi.js~ptoi",
     "access": "public",
     "export": true,
-    "importPath": "@aureooms/js-prime/src/sieve/ptoi.js",
+    "importPath": "@number-theoretic/primes/src/sieve/ptoi.js",
     "importStyle": "{ptoi}",
     "description": null,
     "lineNumber": 1,
@@ -1201,18 +1079,18 @@
     }
   },
   {
-    "__docId__": 76,
+    "__docId__": 71,
     "kind": "file",
     "name": "src/sieve/ptoi2.js",
     "content": "export function ptoi2(p) {\n\treturn (p / 2) | 0;\n}\n",
     "static": true,
-    "longname": "/home/runner/work/js-prime/js-prime/src/sieve/ptoi2.js",
+    "longname": "/home/runner/work/primes/primes/src/sieve/ptoi2.js",
     "access": "public",
     "description": null,
     "lineNumber": 1
   },
   {
-    "__docId__": 77,
+    "__docId__": 72,
     "kind": "function",
     "name": "ptoi2",
     "memberof": "src/sieve/ptoi2.js",
@@ -1222,7 +1100,7 @@
     "longname": "src/sieve/ptoi2.js~ptoi2",
     "access": "public",
     "export": true,
-    "importPath": "@aureooms/js-prime/src/sieve/ptoi2.js",
+    "importPath": "@number-theoretic/primes/src/sieve/ptoi2.js",
     "importStyle": "{ptoi2}",
     "description": null,
     "lineNumber": 1,
@@ -1242,18 +1120,18 @@
     }
   },
   {
-    "__docId__": 78,
+    "__docId__": 73,
     "kind": "file",
     "name": "src/sieve/ptoi23.js",
     "content": "import {ptoi230} from './ptoi230.js';\nimport {ptoi231} from './ptoi231.js';\n\nexport function ptoi23(p) {\n\treturn p % 6 > 4 ? ptoi230(p) : ptoi231(p);\n}\n",
     "static": true,
-    "longname": "/home/runner/work/js-prime/js-prime/src/sieve/ptoi23.js",
+    "longname": "/home/runner/work/primes/primes/src/sieve/ptoi23.js",
     "access": "public",
     "description": null,
     "lineNumber": 1
   },
   {
-    "__docId__": 79,
+    "__docId__": 74,
     "kind": "function",
     "name": "ptoi23",
     "memberof": "src/sieve/ptoi23.js",
@@ -1263,7 +1141,7 @@
     "longname": "src/sieve/ptoi23.js~ptoi23",
     "access": "public",
     "export": true,
-    "importPath": "@aureooms/js-prime/src/sieve/ptoi23.js",
+    "importPath": "@number-theoretic/primes/src/sieve/ptoi23.js",
     "importStyle": "{ptoi23}",
     "description": null,
     "lineNumber": 4,
@@ -1283,18 +1161,18 @@
     }
   },
   {
-    "__docId__": 80,
+    "__docId__": 75,
     "kind": "file",
     "name": "src/sieve/ptoi230.js",
     "content": "export function ptoi230(p) {\n\treturn Math.ceil((p + 1) / 3) - 2;\n}\n",
     "static": true,
-    "longname": "/home/runner/work/js-prime/js-prime/src/sieve/ptoi230.js",
+    "longname": "/home/runner/work/primes/primes/src/sieve/ptoi230.js",
     "access": "public",
     "description": null,
     "lineNumber": 1
   },
   {
-    "__docId__": 81,
+    "__docId__": 76,
     "kind": "function",
     "name": "ptoi230",
     "memberof": "src/sieve/ptoi230.js",
@@ -1304,7 +1182,7 @@
     "longname": "src/sieve/ptoi230.js~ptoi230",
     "access": "public",
     "export": true,
-    "importPath": "@aureooms/js-prime/src/sieve/ptoi230.js",
+    "importPath": "@number-theoretic/primes/src/sieve/ptoi230.js",
     "importStyle": "{ptoi230}",
     "description": null,
     "lineNumber": 1,
@@ -1324,18 +1202,18 @@
     }
   },
   {
-    "__docId__": 82,
+    "__docId__": 77,
     "kind": "file",
     "name": "src/sieve/ptoi231.js",
     "content": "export function ptoi231(p) {\n\treturn Math.ceil((p - 1) / 3) - 1;\n}\n",
     "static": true,
-    "longname": "/home/runner/work/js-prime/js-prime/src/sieve/ptoi231.js",
+    "longname": "/home/runner/work/primes/primes/src/sieve/ptoi231.js",
     "access": "public",
     "description": null,
     "lineNumber": 1
   },
   {
-    "__docId__": 83,
+    "__docId__": 78,
     "kind": "function",
     "name": "ptoi231",
     "memberof": "src/sieve/ptoi231.js",
@@ -1345,7 +1223,7 @@
     "longname": "src/sieve/ptoi231.js~ptoi231",
     "access": "public",
     "export": true,
-    "importPath": "@aureooms/js-prime/src/sieve/ptoi231.js",
+    "importPath": "@number-theoretic/primes/src/sieve/ptoi231.js",
     "importStyle": "{ptoi231}",
     "description": null,
     "lineNumber": 1,
@@ -1365,18 +1243,18 @@
     }
   },
   {
-    "__docId__": 84,
+    "__docId__": 79,
     "kind": "file",
     "name": "src/ulam/atos.js",
     "content": "/**\n * Converts a square Ulam spiral index to an array index.\n *\n */\n\nexport function atos(i, n) {\n\tconst s = Math.sqrt(i) | 0;\n\tconst l = s;\n\tconst r = s + 1;\n\tconst L = l * l;\n\tconst R = r * r;\n\tlet x = ((n - 1) / 2) | 0;\n\tlet y = (n / 2) | 0;\n\n\tif (s % 2 === 1) {\n\t\tif ((i < (L + R) / 2) | 0) {\n\t\t\tx += ((s / 2) | 0) + 1;\n\t\t\ty += ((l / 2) | 0) + L - i;\n\t\t} else {\n\t\t\tx -= ((r / 2) | 0) - R + i;\n\t\t\ty -= ((s / 2) | 0) + 1;\n\t\t}\n\t} else if ((i < (L + R) / 2) | 0) {\n\t\tx -= (s / 2) | 0;\n\t\ty -= ((l / 2) | 0) + L - i;\n\t} else {\n\t\tx += ((r / 2) | 0) + 1 - R + i;\n\t\ty += (s / 2) | 0;\n\t}\n\n\treturn n * y + x;\n}\n",
     "static": true,
-    "longname": "/home/runner/work/js-prime/js-prime/src/ulam/atos.js",
+    "longname": "/home/runner/work/primes/primes/src/ulam/atos.js",
     "access": "public",
     "description": null,
     "lineNumber": 1
   },
   {
-    "__docId__": 85,
+    "__docId__": 80,
     "kind": "function",
     "name": "atos",
     "memberof": "src/ulam/atos.js",
@@ -1386,7 +1264,7 @@
     "longname": "src/ulam/atos.js~atos",
     "access": "public",
     "export": true,
-    "importPath": "@aureooms/js-prime/src/ulam/atos.js",
+    "importPath": "@number-theoretic/primes/src/ulam/atos.js",
     "importStyle": "{atos}",
     "description": "Converts a square Ulam spiral index to an array index.",
     "lineNumber": 6,
@@ -1411,29 +1289,29 @@
     }
   },
   {
-    "__docId__": 86,
+    "__docId__": 81,
     "kind": "file",
     "name": "src/ulam/index.js",
     "content": "export * from './atos.js';\nexport * from './stoa.js';\n",
     "static": true,
-    "longname": "/home/runner/work/js-prime/js-prime/src/ulam/index.js",
+    "longname": "/home/runner/work/primes/primes/src/ulam/index.js",
     "access": "public",
     "description": null,
     "lineNumber": 1
   },
   {
-    "__docId__": 87,
+    "__docId__": 82,
     "kind": "file",
     "name": "src/ulam/stoa.js",
     "content": "/**\n * Converts an array index to a square Ulam spiral index.\n *\n */\n\nexport function stoa(i, n) {\n\tlet line = (i / n) | 0;\n\tlet col = i % n;\n\n\tif (n % 2 === 0) {\n\t\tline = n - line - 1;\n\t\tcol = n - col - 1;\n\t}\n\n\tlet side_col = 1;\n\tlet side_line = 1;\n\n\tlet ring_index;\n\tif (col < n - line) {\n\t\tring_index = Math.min(line, col);\n\t} else if (col > line) {\n\t\tring_index = n - col - 1;\n\t\tside_line = -1;\n\t} else {\n\t\tring_index = n - line - 1;\n\t\tside_col = -1;\n\t}\n\n\tconst sub_size = n - ring_index * 2;\n\n\treturn (\n\t\tsub_size * sub_size -\n\t\t(sub_size - 1) * 2 +\n\t\tside_line * (line - ring_index) -\n\t\tside_col * (col - ring_index) -\n\t\t1\n\t);\n}\n",
     "static": true,
-    "longname": "/home/runner/work/js-prime/js-prime/src/ulam/stoa.js",
+    "longname": "/home/runner/work/primes/primes/src/ulam/stoa.js",
     "access": "public",
     "description": null,
     "lineNumber": 1
   },
   {
-    "__docId__": 88,
+    "__docId__": 83,
     "kind": "function",
     "name": "stoa",
     "memberof": "src/ulam/stoa.js",
@@ -1443,7 +1321,7 @@
     "longname": "src/ulam/stoa.js~stoa",
     "access": "public",
     "export": true,
-    "importPath": "@aureooms/js-prime/src/ulam/stoa.js",
+    "importPath": "@number-theoretic/primes/src/ulam/stoa.js",
     "importStyle": "{stoa}",
     "description": "Converts an array index to a square Ulam spiral index.",
     "lineNumber": 6,
@@ -1469,16 +1347,16 @@
   },
   {
     "kind": "index",
-    "content": ":two: :three: :five: :seven:\n[@aureooms/js-prime](https://aureooms.github.io/js-prime)\n==\n\n<p align=\"center\">\n<a href=\"https://xkcd.com/5\">\n<img src=\"https://imgs.xkcd.com/comics/blownapart_color.jpg\" width=\"600\">\n</a><br/>\n© <a href=\"https://xkcd.com\">xkcd.com</a>\n</p>\n\nPrime numbers algorithms for JavaScript.\nSee [docs](https://aureooms.github.io/js-prime).\nParent is [@aureooms/js-algorithms](https://github.com/aureooms/js-algorithms).\n\n[![License](https://img.shields.io/github/license/aureooms/js-prime.svg)](https://raw.githubusercontent.com/aureooms/js-prime/main/LICENSE)\n[![Version](https://img.shields.io/npm/v/@aureooms/js-prime.svg)](https://www.npmjs.org/package/@aureooms/js-prime)\n[![Build](https://img.shields.io/travis/aureooms/js-prime/main.svg)](https://travis-ci.com/aureooms/js-prime/branches)\n[![Dependencies](https://img.shields.io/david/aureooms/js-prime.svg)](https://david-dm.org/aureooms/js-prime)\n[![Dev dependencies](https://img.shields.io/david/dev/aureooms/js-prime.svg)](https://david-dm.org/aureooms/js-prime?type=dev)\n[![GitHub issues](https://img.shields.io/github/issues/aureooms/js-prime.svg)](https://github.com/aureooms/js-prime/issues)\n[![Downloads](https://img.shields.io/npm/dm/@aureooms/js-prime.svg)](https://www.npmjs.org/package/@aureooms/js-prime)\n\n[![Code issues](https://img.shields.io/codeclimate/issues/aureooms/js-prime.svg)](https://codeclimate.com/github/aureooms/js-prime/issues)\n[![Code maintainability](https://img.shields.io/codeclimate/maintainability/aureooms/js-prime.svg)](https://codeclimate.com/github/aureooms/js-prime/trends/churn)\n[![Code coverage (cov)](https://img.shields.io/codecov/c/gh/aureooms/js-prime/main.svg)](https://codecov.io/gh/aureooms/js-prime)\n[![Code technical debt](https://img.shields.io/codeclimate/tech-debt/aureooms/js-prime.svg)](https://codeclimate.com/github/aureooms/js-prime/trends/technical_debt)\n[![Documentation](https://aureooms.github.io/js-prime/badge.svg)](https://aureooms.github.io/js-prime/source.html)\n[![Package size](https://img.shields.io/bundlephobia/minzip/@aureooms/js-prime)](https://bundlephobia.com/result?p=@aureooms/js-prime)\n\n## :link: Links\n\n - http://cr.yp.to/primegen.html\n - https://github.com/jbarham/primegen.go\n",
-    "longname": "/home/runner/work/js-prime/js-prime/README.md",
+    "content": ":two: :three: :five: :seven:\n[@number-theoretic/primes](https://number-theoretic.github.io/primes)\n==\n\n<p align=\"center\">\n<a href=\"https://xkcd.com/5\">\n<img src=\"https://imgs.xkcd.com/comics/blownapart_color.jpg\" width=\"600\">\n</a><br/>\n© <a href=\"https://xkcd.com\">xkcd.com</a>\n</p>\n\nPrime numbers algorithms for JavaScript.\nSee [docs](https://number-theoretic.github.io/primes).\nParent is [js-algorithms](https://github.com/make-github-pseudonymous-again/js-algorithms).\n\n[![License](https://img.shields.io/github/license/number-theoretic/primes.svg)](https://raw.githubusercontent.com/number-theoretic/primes/main/LICENSE)\n[![Version](https://img.shields.io/npm/v/@number-theoretic/primes.svg)](https://www.npmjs.org/package/@number-theoretic/primes)\n[![Tests](https://img.shields.io/github/workflow/status/number-theoretic/primes/ci?event=push&label=tests)](https://github.com/number-theoretic/primes/actions/workflows/ci.yml?query=branch:main)\n[![Dependencies](https://img.shields.io/librariesio/github/number-theoretic/primes.svg)](https://github.com/number-theoretic/primes/network/dependencies)\n[![GitHub issues](https://img.shields.io/github/issues/number-theoretic/primes.svg)](https://github.com/number-theoretic/primes/issues)\n[![Downloads](https://img.shields.io/npm/dm/@number-theoretic/primes.svg)](https://www.npmjs.org/package/@number-theoretic/primes)\n\n[![Code issues](https://img.shields.io/codeclimate/issues/number-theoretic/primes.svg)](https://codeclimate.com/github/number-theoretic/primes/issues)\n[![Code maintainability](https://img.shields.io/codeclimate/maintainability/number-theoretic/primes.svg)](https://codeclimate.com/github/number-theoretic/primes/trends/churn)\n[![Code coverage (cov)](https://img.shields.io/codecov/c/gh/number-theoretic/primes/main.svg)](https://codecov.io/gh/number-theoretic/primes)\n[![Code technical debt](https://img.shields.io/codeclimate/tech-debt/number-theoretic/primes.svg)](https://codeclimate.com/github/number-theoretic/primes/trends/technical_debt)\n[![Documentation](https://number-theoretic.github.io/primes/badge.svg)](https://number-theoretic.github.io/primes/source.html)\n[![Package size](https://img.shields.io/bundlephobia/minzip/@number-theoretic/primes)](https://bundlephobia.com/result?p=@number-theoretic/primes)\n\n## :link: Links\n\n - http://cr.yp.to/primegen.html\n - https://github.com/jbarham/primegen.go\n",
+    "longname": "/home/runner/work/primes/primes/README.md",
     "name": "./README.md",
     "static": true,
     "access": "public"
   },
   {
     "kind": "packageJSON",
-    "content": "{\n  \"name\": \"@aureooms/js-prime\",\n  \"description\": \"prime numbers code bricks for JavaScript\",\n  \"version\": \"5.0.0\",\n  \"license\": \"AGPL-3.0\",\n  \"author\": \"Aurélien Ooms <aurelien.ooms@gmail.com>\",\n  \"homepage\": \"https://aureooms.github.io/js-prime\",\n  \"repository\": {\n    \"type\": \"git\",\n    \"url\": \"https://github.com/aureooms/js-prime\"\n  },\n  \"bugs\": {\n    \"url\": \"https://github.com/aureooms/js-prime/issues\"\n  },\n  \"keywords\": [\n    \"bricks\",\n    \"factorization\",\n    \"javascript\",\n    \"js\",\n    \"number\",\n    \"prime\"\n  ],\n  \"sideEffects\": false,\n  \"source\": \"src/index.js\",\n  \"main\": \"dist/index.js\",\n  \"module\": \"dist/index.module.js\",\n  \"umd:main\": \"dist/index.umd.js\",\n  \"unpkg\": \"dist/index.umd.js\",\n  \"exports\": {\n    \".\": {\n      \"browser\": \"./dist/index.module.js\",\n      \"umd\": \"./dist/index.umd.js\",\n      \"require\": \"./dist/index.js\",\n      \"default\": \"./dist/index.modern.js\"\n    }\n  },\n  \"files\": [\n    \"dist\"\n  ],\n  \"scripts\": {\n    \"build\": \"NODE_ENV=production microbundle\",\n    \"build-docs\": \"esdoc\",\n    \"build-gh-pages\": \"npm run build-docs\",\n    \"commit-msg\": \"commitlint --edit\",\n    \"cover\": \"c8 --all --src src --reporter=lcov npm test\",\n    \"debug\": \"NODE_ENV=debug npm run test -- -st --fail-fast\",\n    \"dev\": \"npm run lint-config-and-fix && npm run lint-and-fix && npm run cover -- -- -st --fail-fast\",\n    \"install-hooks\": \"husky install\",\n    \"lint\": \"xo\",\n    \"lint-and-fix\": \"npm run lint -- --fix\",\n    \"lint-config\": \"fixpack --dryRun\",\n    \"lint-config-and-fix\": \"fixpack || fixpack\",\n    \"postinstall\": \"npm run install-hooks\",\n    \"postpublish\": \"pinst --enable\",\n    \"precommit\": \"lint-staged\",\n    \"prepare\": \"npm run build\",\n    \"prepublishOnly\": \"pinst --disable\",\n    \"release\": \"np --message ':hatching_chick: release: Bumping to v%s.'\",\n    \"test\": \"ava\",\n    \"travis\": \"npm run lint-config && npm run lint && npm run cover\"\n  },\n  \"dependencies\": {},\n  \"devDependencies\": {\n    \"@aureooms/js-array\": \"4.0.0\",\n    \"@aureooms/js-functools\": \"2.0.3\",\n    \"@aureooms/js-itertools\": \"5.1.0\",\n    \"@aureooms/js-number\": \"4.0.0\",\n    \"@aureooms/js-uint32\": \"1.0.1\",\n    \"@babel/core\": \"7.13.10\",\n    \"@babel/preset-env\": \"7.13.12\",\n    \"@babel/register\": \"7.13.8\",\n    \"@commitlint/cli\": \"12.0.1\",\n    \"@js-library/commitlint-config\": \"0.0.4\",\n    \"ava\": \"3.15.0\",\n    \"babel-plugin-transform-remove-console\": \"6.9.4\",\n    \"babel-plugin-unassert\": \"3.0.1\",\n    \"babel-preset-power-assert\": \"3.0.0\",\n    \"c8\": \"7.6.0\",\n    \"coveralls\": \"3.1.0\",\n    \"esdoc\": \"1.1.0\",\n    \"esdoc-inject-script-plugin\": \"1.0.0\",\n    \"esdoc-inject-style-plugin\": \"1.0.0\",\n    \"esdoc-standard-plugin\": \"1.0.0\",\n    \"fixpack\": \"4.0.0\",\n    \"husky\": \"5.2.0\",\n    \"lint-staged\": \"10.5.4\",\n    \"microbundle\": \"0.13.0\",\n    \"np\": \"7.4.0\",\n    \"pinst\": \"2.1.6\",\n    \"power-assert\": \"1.6.1\",\n    \"regenerator-runtime\": \"0.13.7\",\n    \"xo\": \"0.38.2\"\n  },\n  \"ava\": {\n    \"files\": [\n      \"test/src/**/*\"\n    ],\n    \"require\": [\n      \"regenerator-runtime/runtime\",\n      \"@babel/register\"\n    ],\n    \"timeout\": \"1m\"\n  },\n  \"babel\": {\n    \"sourceMaps\": true,\n    \"presets\": [\n      [\n        \"@babel/preset-env\",\n        {\n          \"targets\": [\n            \"defaults\",\n            \"maintained node versions\"\n          ]\n        }\n      ]\n    ],\n    \"env\": {\n      \"debug\": {\n        \"presets\": [\n          [\n            \"@babel/preset-env\",\n            {\n              \"targets\": \"current node\"\n            }\n          ],\n          \"babel-preset-power-assert\"\n        ]\n      },\n      \"test\": {\n        \"presets\": [\n          [\n            \"@babel/preset-env\",\n            {\n              \"targets\": \"current node\"\n            }\n          ],\n          \"babel-preset-power-assert\"\n        ],\n        \"plugins\": [\n          [\n            \"transform-remove-console\",\n            {\n              \"exclude\": [\n                \"log\",\n                \"error\",\n                \"warn\"\n              ]\n            }\n          ]\n        ]\n      },\n      \"development\": {\n        \"presets\": [\n          \"babel-preset-power-assert\"\n        ],\n        \"plugins\": [\n          [\n            \"transform-remove-console\",\n            {\n              \"exclude\": [\n                \"log\",\n                \"error\",\n                \"warn\"\n              ]\n            }\n          ]\n        ]\n      },\n      \"production\": {\n        \"plugins\": [\n          \"babel-plugin-unassert\",\n          [\n            \"transform-remove-console\",\n            {\n              \"exclude\": [\n                \"log\",\n                \"error\",\n                \"warn\"\n              ]\n            }\n          ]\n        ]\n      }\n    }\n  },\n  \"lint-staged\": {\n    \"*.js\": [\n      \"npm run lint-and-fix\"\n    ],\n    \"package.json\": [\n      \"npm run lint-config-and-fix\"\n    ]\n  },\n  \"prettier\": {\n    \"trailingComma\": \"all\"\n  },\n  \"xo\": {\n    \"prettier\": true,\n    \"plugins\": [\n      \"unicorn\"\n    ],\n    \"rules\": {\n      \"unicorn/filename-case\": \"off\",\n      \"camelcase\": \"off\",\n      \"unicorn/prevent-abbreviations\": \"off\",\n      \"no-constant-condition\": \"off\",\n      \"unicorn/prefer-math-trunc\": \"off\",\n      \"unicorn/no-new-array\": \"off\",\n      \"no-negated-condition\": \"off\"\n    },\n    \"overrides\": [\n      {\n        \"files\": [\n          \"doc/**\"\n        ],\n        \"env\": \"browser\"\n      }\n    ]\n  }\n}\n",
-    "longname": "/home/runner/work/js-prime/js-prime/package.json",
+    "content": "{\n  \"name\": \"@number-theoretic/primes\",\n  \"description\": \"prime numbers code bricks for JavaScript\",\n  \"version\": \"6.0.0\",\n  \"license\": \"AGPL-3.0\",\n  \"author\": \"make-github-pseudonymous-again\",\n  \"homepage\": \"https://number-theoretic.github.io/primes\",\n  \"repository\": {\n    \"type\": \"git\",\n    \"url\": \"https://github.com/number-theoretic/primes\"\n  },\n  \"bugs\": {\n    \"url\": \"https://github.com/number-theoretic/primes/issues\"\n  },\n  \"keywords\": [\n    \"bricks\",\n    \"factorization\",\n    \"javascript\",\n    \"js\",\n    \"number\",\n    \"prime\"\n  ],\n  \"sideEffects\": false,\n  \"type\": \"module\",\n  \"source\": \"src/index.js\",\n  \"main\": \"dist/index.cjs\",\n  \"module\": \"dist/index.module.js\",\n  \"esmodule\": \"dist/index.modern.js\",\n  \"umd:main\": \"dist/index.umd.js\",\n  \"unpkg\": \"dist/index.umd.js\",\n  \"exports\": {\n    \".\": {\n      \"browser\": \"./dist/index.module.js\",\n      \"umd\": \"./dist/index.umd.js\",\n      \"require\": \"./dist/index.cjs\",\n      \"default\": \"./dist/index.modern.js\"\n    }\n  },\n  \"files\": [\n    \"dist\"\n  ],\n  \"publishConfig\": {\n    \"access\": \"public\"\n  },\n  \"scripts\": {\n    \"build\": \"NODE_ENV=production microbundle\",\n    \"build-docs\": \"esdoc\",\n    \"build-gh-pages\": \"npm run build-docs\",\n    \"commit-msg\": \"commitlint --edit\",\n    \"cover\": \"NODE_ENV=cover c8 --all --src src --reporter lcov --reporter text-summary --reporter text npm test\",\n    \"debug\": \"NODE_ENV=debug npm run test -- -st --fail-fast\",\n    \"dev\": \"npm run lint-config-and-fix && npm run lint-and-fix && npm run cover -- -- -st --fail-fast\",\n    \"install-hooks\": \"husky install\",\n    \"lint\": \"xo\",\n    \"lint-and-fix\": \"npm run lint -- --fix\",\n    \"lint-config\": \"fixpack --dryRun\",\n    \"lint-config-and-fix\": \"fixpack || fixpack\",\n    \"postinstall\": \"npm run install-hooks\",\n    \"postpublish\": \"pinst --enable\",\n    \"precommit\": \"lint-staged\",\n    \"prepare\": \"npm run build\",\n    \"prepublishOnly\": \"pinst --disable\",\n    \"release\": \"np --message ':hatching_chick: release: Bumping to v%s.'\",\n    \"test\": \"npm run test:src\",\n    \"test-cmd\": \"NODE_LOADER_CONFIG=test/loader/config.js ava\",\n    \"test:cjs\": \"IMPORT_MAP_PATH=test/import-maps/dist/index.json npm run test-cmd\",\n    \"test:dist\": \"npm run test:modern && npm run test:module && npm run test:cjs\",\n    \"test:modern\": \"IMPORT_MAP_PATH=test/import-maps/dist/index.modern.json npm run test-cmd\",\n    \"test:module\": \"IMPORT_MAP_PATH=test/import-maps/dist/index.module.json npm run test-cmd\",\n    \"test:src\": \"IMPORT_MAP_PATH=test/import-maps/src/index.json npm run test-cmd\"\n  },\n  \"dependencies\": {},\n  \"devDependencies\": {\n    \"@arithmetic-type/double\": \"5.0.0\",\n    \"@arithmetic-type/uint32\": \"2.0.0\",\n    \"@array-like/alloc\": \"0.0.1\",\n    \"@array-like/experimental\": \"5.0.0\",\n    \"@array-like/fill\": \"0.0.1\",\n    \"@babel/core\": \"7.19.6\",\n    \"@babel/eslint-parser\": \"^7.19.1\",\n    \"@babel/preset-env\": \"7.19.4\",\n    \"@commitlint/cli\": \"17.1.2\",\n    \"@functional-abstraction/functools\": \"3.0.2\",\n    \"@js-library/commitlint-config\": \"0.0.4\",\n    \"@node-loader/babel\": \"2.0.1\",\n    \"@node-loader/core\": \"2.0.0\",\n    \"@node-loader/import-maps\": \"1.1.0\",\n    \"@set-theory/cartesian-product\": \"2.0.2\",\n    \"ava\": \"4.3.3\",\n    \"babel-plugin-transform-remove-console\": \"6.9.4\",\n    \"babel-plugin-unassert\": \"3.2.0\",\n    \"babel-preset-power-assert\": \"3.0.0\",\n    \"c8\": \"7.12.0\",\n    \"esdoc\": \"1.1.0\",\n    \"esdoc-inject-script-plugin\": \"1.0.0\",\n    \"esdoc-inject-style-plugin\": \"1.0.0\",\n    \"esdoc-standard-plugin\": \"1.0.0\",\n    \"fixpack\": \"4.0.0\",\n    \"husky\": \"8.0.1\",\n    \"lint-staged\": \"13.0.3\",\n    \"microbundle\": \"0.15.1\",\n    \"np\": \"7.6.2\",\n    \"pinst\": \"3.0.0\",\n    \"power-assert\": \"1.6.1\",\n    \"regenerator-runtime\": \"0.13.10\",\n    \"xo\": \"0.52.4\"\n  },\n  \"ava\": {\n    \"files\": [\n      \"test/src/**/*\"\n    ],\n    \"nodeArguments\": [\n      \"--experimental-loader=@node-loader/core\"\n    ],\n    \"require\": [\n      \"regenerator-runtime/runtime\"\n    ],\n    \"timeout\": \"1m\"\n  },\n  \"babel\": {\n    \"sourceMaps\": true,\n    \"plugins\": [\n      \"@babel/plugin-syntax-import-assertions\",\n      [\n        \"transform-remove-console\",\n        {\n          \"exclude\": [\n            \"log\",\n            \"error\",\n            \"warn\"\n          ]\n        }\n      ]\n    ],\n    \"env\": {\n      \"debug\": {\n        \"sourceMaps\": \"both\",\n        \"presets\": [\n          \"babel-preset-power-assert\"\n        ],\n        \"plugins\": [\n          [\n            \"transform-remove-console\",\n            {\n              \"exclude\": [\n                \"debug\",\n                \"log\",\n                \"error\",\n                \"warn\"\n              ]\n            }\n          ]\n        ]\n      },\n      \"test\": {\n        \"sourceMaps\": \"both\",\n        \"presets\": [\n          \"babel-preset-power-assert\"\n        ]\n      },\n      \"cover\": {\n        \"sourceMaps\": \"both\",\n        \"presets\": [\n          \"babel-preset-power-assert\"\n        ]\n      },\n      \"development\": {\n        \"presets\": [\n          [\n            \"@babel/preset-env\",\n            {\n              \"targets\": [\n                \"defaults\",\n                \"maintained node versions\"\n              ]\n            }\n          ],\n          \"babel-preset-power-assert\"\n        ]\n      },\n      \"production\": {\n        \"presets\": [\n          [\n            \"@babel/preset-env\",\n            {\n              \"targets\": [\n                \"defaults\",\n                \"maintained node versions\"\n              ]\n            }\n          ]\n        ],\n        \"plugins\": [\n          \"babel-plugin-unassert\"\n        ]\n      }\n    }\n  },\n  \"lint-staged\": {\n    \"*.js\": [\n      \"npm run lint-and-fix\"\n    ],\n    \"package.json\": [\n      \"npm run lint-config-and-fix\"\n    ]\n  },\n  \"prettier\": {\n    \"trailingComma\": \"all\"\n  },\n  \"xo\": {\n    \"parser\": \"@babel/eslint-parser\",\n    \"prettier\": true,\n    \"plugins\": [\n      \"unicorn\"\n    ],\n    \"rules\": {\n      \"unicorn/filename-case\": \"off\",\n      \"camelcase\": \"off\",\n      \"unicorn/prevent-abbreviations\": \"off\",\n      \"no-constant-condition\": \"off\",\n      \"unicorn/prefer-math-trunc\": \"off\",\n      \"unicorn/no-new-array\": \"off\",\n      \"no-negated-condition\": \"off\",\n      \"no-bitwise\": \"off\",\n      \"unicorn/prefer-node-protocol\": \"off\"\n    },\n    \"overrides\": [\n      {\n        \"files\": [\n          \"doc/**\"\n        ],\n        \"env\": \"browser\"\n      }\n    ]\n  }\n}\n",
+    "longname": "/home/runner/work/primes/primes/package.json",
     "name": "package.json",
     "static": true,
     "access": "public"
@@ -1493,7 +1371,7 @@
   },
   {
     "kind": "manual",
-    "longname": "/home/runner/work/js-prime/js-prime/doc/manual/overview.md",
+    "longname": "/home/runner/work/primes/primes/doc/manual/overview.md",
     "name": "./doc/manual/overview.md",
     "content": "# Overview\n",
     "static": true,
@@ -1501,25 +1379,25 @@
   },
   {
     "kind": "manual",
-    "longname": "/home/runner/work/js-prime/js-prime/doc/manual/installation.md",
+    "longname": "/home/runner/work/primes/primes/doc/manual/installation.md",
     "name": "./doc/manual/installation.md",
-    "content": "# Installation\nCan be managed using\n[jspm](http://jspm.io)\nor [npm](https://github.com/npm/npm).\n\n### jspm\n```terminal\njspm install npm:@aureooms/js-prime\n```\n\n### npm\n```terminal\nnpm install @aureooms/js-prime --save\n```\n",
+    "content": "# Installation\n\nCan be managed using\n[yarn](https://yarnpkg.com/en/docs),\n[npm](https://docs.npmjs.com),\nor [jspm](https://jspm.org/docs).\n\n\n### yarn\n```terminal\nyarn add @number-theoretic/primes\n```\n\n### npm\n```terminal\nnpm install @number-theoretic/primes --save\n```\n\n### jspm\n```terminal\njspm install npm:@number-theoretic/primes\n```\n",
     "static": true,
     "access": "public"
   },
   {
     "kind": "manual",
-    "longname": "/home/runner/work/js-prime/js-prime/doc/manual/usage.md",
+    "longname": "/home/runner/work/primes/primes/doc/manual/usage.md",
     "name": "./doc/manual/usage.md",
-    "content": "# Usage\nThe code needs a ES2015+ polyfill to work, for example\n[regenerator-runtime/runtime](https://babeljs.io/docs/usage/polyfill).\n```js\nrequire( 'regenerator-runtime/runtime' ) ;\n// or\nimport 'regenerator-runtime/runtime.js' ;\n```\n\nThen\n```js\nconst measure = require( '@aureooms/js-prime' ) ;\n// or\nimport measure from '@aureooms/js-prime' ;\n```\n",
+    "content": "# Usage\n```\n\n```js\nconst primes = await import('@number-theoretic/primes');\n// or\nimport * as primes from '@number-theoretic/primes';\n```\n",
     "static": true,
     "access": "public"
   },
   {
     "kind": "manual",
-    "longname": "/home/runner/work/js-prime/js-prime/doc/manual/example.md",
+    "longname": "/home/runner/work/primes/primes/doc/manual/example.md",
     "name": "./doc/manual/example.md",
-    "content": "# Examples\n",
+    "content": "# Examples\n\n> More examples in [the test files](https://github.com/number-theoretic/primes/tree/main/test/src).\n",
     "static": true,
     "access": "public"
   }

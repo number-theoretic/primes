@@ -1,110 +1,98 @@
 window.esdocSearchIndex = [
   [
-    "@aureooms/js-prime/src/sieve/eratosthenes23.js~__eratosthenes23__",
+    "@number-theoretic/primes/src/sieve/eratosthenes23.js~__eratosthenes23__",
     "function/index.html#static-function-__eratosthenes23__",
-    "<span>__eratosthenes23__</span> <span class=\"search-result-import-path\">@aureooms/js-prime/src/sieve/eratosthenes23.js</span>",
+    "<span>__eratosthenes23__</span> <span class=\"search-result-import-path\">@number-theoretic/primes/src/sieve/eratosthenes23.js</span>",
     "function"
   ],
   [
-    "@aureooms/js-prime/src/sieve/eratosthenes2.js~__eratosthenes2__",
+    "@number-theoretic/primes/src/sieve/eratosthenes2.js~__eratosthenes2__",
     "function/index.html#static-function-__eratosthenes2__",
-    "<span>__eratosthenes2__</span> <span class=\"search-result-import-path\">@aureooms/js-prime/src/sieve/eratosthenes2.js</span>",
+    "<span>__eratosthenes2__</span> <span class=\"search-result-import-path\">@number-theoretic/primes/src/sieve/eratosthenes2.js</span>",
     "function"
   ],
   [
-    "@aureooms/js-prime/src/sieve/eratosthenes.js~__eratosthenes__",
+    "@number-theoretic/primes/src/sieve/eratosthenes.js~__eratosthenes__",
     "function/index.html#static-function-__eratosthenes__",
-    "<span>__eratosthenes__</span> <span class=\"search-result-import-path\">@aureooms/js-prime/src/sieve/eratosthenes.js</span>",
+    "<span>__eratosthenes__</span> <span class=\"search-result-import-path\">@number-theoretic/primes/src/sieve/eratosthenes.js</span>",
     "function"
   ],
   [
-    "@aureooms/js-prime/src/analyze/factorize.js~__factorize__",
-    "function/index.html#static-function-__factorize__",
-    "<span>__factorize__</span> <span class=\"search-result-import-path\">@aureooms/js-prime/src/analyze/factorize.js</span>",
-    "function"
-  ],
-  [
-    "@aureooms/js-prime/src/sieve/gothrough.js~__gothrough__",
+    "@number-theoretic/primes/src/sieve/gothrough.js~__gothrough__",
     "function/index.html#static-function-__gothrough__",
-    "<span>__gothrough__</span> <span class=\"search-result-import-path\">@aureooms/js-prime/src/sieve/gothrough.js</span>",
+    "<span>__gothrough__</span> <span class=\"search-result-import-path\">@number-theoretic/primes/src/sieve/gothrough.js</span>",
     "function"
   ],
   [
-    "@aureooms/js-prime/src/limits/upperbound.js~__upperbound__",
-    "function/index.html#static-function-__upperbound__",
-    "<span>__upperbound__</span> <span class=\"search-result-import-path\">@aureooms/js-prime/src/limits/upperbound.js</span>",
-    "function"
-  ],
-  [
-    "@aureooms/js-prime/src/ulam/atos.js~atos",
+    "@number-theoretic/primes/src/ulam/atos.js~atos",
     "function/index.html#static-function-atos",
-    "<span>atos</span> <span class=\"search-result-import-path\">@aureooms/js-prime/src/ulam/atos.js</span>",
+    "<span>atos</span> <span class=\"search-result-import-path\">@number-theoretic/primes/src/ulam/atos.js</span>",
     "function"
   ],
   [
-    "@aureooms/js-prime/src/sieve/itop230.js~itop230",
+    "@number-theoretic/primes/src/sieve/itop230.js~itop230",
     "function/index.html#static-function-itop230",
-    "<span>itop230</span> <span class=\"search-result-import-path\">@aureooms/js-prime/src/sieve/itop230.js</span>",
+    "<span>itop230</span> <span class=\"search-result-import-path\">@number-theoretic/primes/src/sieve/itop230.js</span>",
     "function"
   ],
   [
-    "@aureooms/js-prime/src/sieve/itop231.js~itop231",
+    "@number-theoretic/primes/src/sieve/itop231.js~itop231",
     "function/index.html#static-function-itop231",
-    "<span>itop231</span> <span class=\"search-result-import-path\">@aureooms/js-prime/src/sieve/itop231.js</span>",
+    "<span>itop231</span> <span class=\"search-result-import-path\">@number-theoretic/primes/src/sieve/itop231.js</span>",
     "function"
   ],
   [
-    "@aureooms/js-prime/src/sieve/itop23.js~itop23",
+    "@number-theoretic/primes/src/sieve/itop23.js~itop23",
     "function/index.html#static-function-itop23",
-    "<span>itop23</span> <span class=\"search-result-import-path\">@aureooms/js-prime/src/sieve/itop23.js</span>",
+    "<span>itop23</span> <span class=\"search-result-import-path\">@number-theoretic/primes/src/sieve/itop23.js</span>",
     "function"
   ],
   [
-    "@aureooms/js-prime/src/sieve/itop2.js~itop2",
+    "@number-theoretic/primes/src/sieve/itop2.js~itop2",
     "function/index.html#static-function-itop2",
-    "<span>itop2</span> <span class=\"search-result-import-path\">@aureooms/js-prime/src/sieve/itop2.js</span>",
+    "<span>itop2</span> <span class=\"search-result-import-path\">@number-theoretic/primes/src/sieve/itop2.js</span>",
     "function"
   ],
   [
-    "@aureooms/js-prime/src/sieve/itop.js~itop",
+    "@number-theoretic/primes/src/sieve/itop.js~itop",
     "function/index.html#static-function-itop",
-    "<span>itop</span> <span class=\"search-result-import-path\">@aureooms/js-prime/src/sieve/itop.js</span>",
+    "<span>itop</span> <span class=\"search-result-import-path\">@number-theoretic/primes/src/sieve/itop.js</span>",
     "function"
   ],
   [
-    "@aureooms/js-prime/src/sieve/ptoi230.js~ptoi230",
+    "@number-theoretic/primes/src/sieve/ptoi230.js~ptoi230",
     "function/index.html#static-function-ptoi230",
-    "<span>ptoi230</span> <span class=\"search-result-import-path\">@aureooms/js-prime/src/sieve/ptoi230.js</span>",
+    "<span>ptoi230</span> <span class=\"search-result-import-path\">@number-theoretic/primes/src/sieve/ptoi230.js</span>",
     "function"
   ],
   [
-    "@aureooms/js-prime/src/sieve/ptoi231.js~ptoi231",
+    "@number-theoretic/primes/src/sieve/ptoi231.js~ptoi231",
     "function/index.html#static-function-ptoi231",
-    "<span>ptoi231</span> <span class=\"search-result-import-path\">@aureooms/js-prime/src/sieve/ptoi231.js</span>",
+    "<span>ptoi231</span> <span class=\"search-result-import-path\">@number-theoretic/primes/src/sieve/ptoi231.js</span>",
     "function"
   ],
   [
-    "@aureooms/js-prime/src/sieve/ptoi23.js~ptoi23",
+    "@number-theoretic/primes/src/sieve/ptoi23.js~ptoi23",
     "function/index.html#static-function-ptoi23",
-    "<span>ptoi23</span> <span class=\"search-result-import-path\">@aureooms/js-prime/src/sieve/ptoi23.js</span>",
+    "<span>ptoi23</span> <span class=\"search-result-import-path\">@number-theoretic/primes/src/sieve/ptoi23.js</span>",
     "function"
   ],
   [
-    "@aureooms/js-prime/src/sieve/ptoi2.js~ptoi2",
+    "@number-theoretic/primes/src/sieve/ptoi2.js~ptoi2",
     "function/index.html#static-function-ptoi2",
-    "<span>ptoi2</span> <span class=\"search-result-import-path\">@aureooms/js-prime/src/sieve/ptoi2.js</span>",
+    "<span>ptoi2</span> <span class=\"search-result-import-path\">@number-theoretic/primes/src/sieve/ptoi2.js</span>",
     "function"
   ],
   [
-    "@aureooms/js-prime/src/sieve/ptoi.js~ptoi",
+    "@number-theoretic/primes/src/sieve/ptoi.js~ptoi",
     "function/index.html#static-function-ptoi",
-    "<span>ptoi</span> <span class=\"search-result-import-path\">@aureooms/js-prime/src/sieve/ptoi.js</span>",
+    "<span>ptoi</span> <span class=\"search-result-import-path\">@number-theoretic/primes/src/sieve/ptoi.js</span>",
     "function"
   ],
   [
-    "@aureooms/js-prime/src/ulam/stoa.js~stoa",
+    "@number-theoretic/primes/src/ulam/stoa.js~stoa",
     "function/index.html#static-function-stoa",
-    "<span>stoa</span> <span class=\"search-result-import-path\">@aureooms/js-prime/src/ulam/stoa.js</span>",
+    "<span>stoa</span> <span class=\"search-result-import-path\">@number-theoretic/primes/src/ulam/stoa.js</span>",
     "function"
   ],
   [
@@ -390,18 +378,6 @@ window.esdocSearchIndex = [
     "external"
   ],
   [
-    "src/analyze/factorize.js",
-    "file/src/analyze/factorize.js.html",
-    "src/analyze/factorize.js",
-    "file"
-  ],
-  [
-    "src/analyze/index.js",
-    "file/src/analyze/index.js.html",
-    "src/analyze/index.js",
-    "file"
-  ],
-  [
     "src/index.js",
     "file/src/index.js.html",
     "src/index.js",
@@ -411,12 +387,6 @@ window.esdocSearchIndex = [
     "src/limits/index.js",
     "file/src/limits/index.js.html",
     "src/limits/index.js",
-    "file"
-  ],
-  [
-    "src/limits/upperbound.js",
-    "file/src/limits/upperbound.js.html",
-    "src/limits/upperbound.js",
     "file"
   ],
   [
