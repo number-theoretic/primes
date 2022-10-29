@@ -10,7 +10,8 @@ import {bind} from '@functional-abstraction/functools';
 
 import {product} from '@set-theory/cartesian-product';
 
-import data from '../../data/1000.json';
+import data from '../../data/1000.json' assert {type: 'json'};
+
 import {
 	__gothrough__,
 	__eratosthenes__,
