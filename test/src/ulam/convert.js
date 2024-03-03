@@ -33,6 +33,7 @@
  *
  */
 import test from 'ava';
+
 import {atos, stoa} from '#module';
 
 test('ulam convert', (t) => {

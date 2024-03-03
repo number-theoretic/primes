@@ -1,13 +1,10 @@
 import test from 'ava';
 
-import {alloc} from '@array-like/alloc';
-import {fill} from '@array-like/fill';
-import {get, set} from '@array-like/experimental';
-
 import {usqrt32} from '@arithmetic-type/uint32';
-
+import {alloc} from '@array-like/alloc';
+import {get, set} from '@array-like/experimental';
+import {fill} from '@array-like/fill';
 import {bind} from '@functional-abstraction/functools';
-
 import {product} from '@set-theory/cartesian-product';
 
 import data from '../../data/1000.json' assert {type: 'json'};

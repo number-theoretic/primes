@@ -1,9 +1,9 @@
-import {ptoi23} from './ptoi23.js';
-import {ptoi230} from './ptoi230.js';
-import {ptoi231} from './ptoi231.js';
 import {itop23} from './itop23.js';
 import {itop230} from './itop230.js';
 import {itop231} from './itop231.js';
+import {ptoi23} from './ptoi23.js';
+import {ptoi230} from './ptoi230.js';
+import {ptoi231} from './ptoi231.js';
 
 /**
  * Sieve of Eratosthenes skipping all multiples of 2 and 3.

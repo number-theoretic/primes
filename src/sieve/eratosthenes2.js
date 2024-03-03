@@ -1,5 +1,5 @@
-import {ptoi2} from './ptoi2.js';
 import {itop2} from './itop2.js';
+import {ptoi2} from './ptoi2.js';
 
 /**
  * Sieve of Eratosthenes skipping all multiples of 2.

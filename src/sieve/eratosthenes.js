@@ -1,5 +1,5 @@
-import {ptoi} from './ptoi.js';
 import {itop} from './itop.js';
+import {ptoi} from './ptoi.js';
 
 /**
  * Sieve of Eratosthenes.
