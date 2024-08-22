@@ -78,7 +78,7 @@
     "@array-like/fill": "0.0.1",
     "@babel/core": "7.25.2",
     "@babel/eslint-parser": "^7.19.1",
-    "@babel/preset-env": "7.25.3",
+    "@babel/preset-env": "7.25.4",
     "@commitlint/cli": "19.4.0",
     "@functional-abstraction/functools": "3.0.2",
     "@js-library/commitlint-config": "0.0.4",
